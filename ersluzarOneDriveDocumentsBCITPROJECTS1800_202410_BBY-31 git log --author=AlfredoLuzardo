@@ -1,0 +1,37 @@
+[33mcommit 7902102008106c911d2aff93a52762eb9bee5991[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: c60778e 9b5118d
+Author: Kristian Santos <ksantos14@my.bcit.ca>
+Date:   Thu Jan 25 11:03:39 2024 -0800
+
+    Added one line to README from Kristian
+
+[33mcommit c60778e00ae8f9c5d9f9e2347fa3f873f56dd568[m
+Author: Kristian Santos <ksantos14@my.bcit.ca>
+Date:   Thu Jan 25 11:01:32 2024 -0800
+
+    Added one line to README from Kristian
+
+[33mcommit 9b5118dcbd1af8e253d2b8d8b9c8b14c7c58a81d[m
+Merge: 3b0bc03 c2aec7a
+Author: jpg157 <jasonlau5000@gmail.com>
+Date:   Thu Jan 25 10:49:56 2024 -0800
+
+    Conflict on README resolved by jpg157
+
+[33mcommit 3b0bc032de6d962be498e83c754b3fc2ee76a304[m
+Author: jpg157 <jasonlau5000@gmail.com>
+Date:   Thu Jan 25 10:30:49 2024 -0800
+
+    Added one link intro to README for jp157
+
+[33mcommit c2aec7a5fe45734fa0e45bb8d8f36dfaa554e553[m
+Author: AlfredoLuzardo <luzardoneto2005@gmail.com>
+Date:   Thu Jan 25 10:26:49 2024 -0800
+
+    Added my name and bio into the README.md file
+
+[33mcommit a0974268928dce3fa23d6072fe81e9ca2c1c33c5[m
+Author: AlfredoLuzardo <122494416+AlfredoLuzardo@users.noreply.github.com>
+Date:   Thu Jan 25 10:04:53 2024 -0800
+
+    Initial commit

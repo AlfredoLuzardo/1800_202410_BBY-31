@@ -3,6 +3,9 @@
 ## 1. Project Description
 State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
 This browser based web application to ... 
+Our team BBY-31 (Alfredo Luzardo, Jason Lau, Kristian Santos) is developing a web application to help 
+journalists and geographically isolated people spread awareness on issues that are overshadowed, by giving 
+them the ability to post articles and have them ranked by the population.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
