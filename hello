@@ -1,4 +1,10 @@
-[33mcommit 7902102008106c911d2aff93a52762eb9bee5991[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+[33mcommit 3e8fde6ead471d131c462e64608e4655e3223164[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: AlfredoLuzardo <luzardoneto2005@gmail.com>
+Date:   Thu Feb 15 22:49:51 2024 -0800
+
+    Created NavBar, edited the readMe file with project pitch
+
+[33mcommit 7902102008106c911d2aff93a52762eb9bee5991[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
 Merge: c60778e 9b5118d
 Author: Kristian Santos <ksantos14@my.bcit.ca>
 Date:   Thu Jan 25 11:03:39 2024 -0800

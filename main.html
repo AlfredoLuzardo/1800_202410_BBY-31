@@ -24,7 +24,7 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-
+  
   <!--Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
@@ -41,12 +41,8 @@
 
   <div class="p-5 mb-4 bg-info rounded-3">
     <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold">Welcome to BBY-31 Application</h1>
+      <h1 class="display-5 fw-bold">Welcome <span id="name-goes-here"></span></h1>
       <p class="col-md-8 fs-4">Let's explore world events.</p>
-
-      <!-- Add an onclick attribute to define click event handler -->
-      <button onclick="window.location.href='login.html'" class="btn btn-primary btn-lg"
-        type="button">Login/Signup</button>
     </div>
   </div>
 
@@ -56,10 +52,7 @@
   <!-- JavaScript Functions go here -->
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/script.js"></script>
-  <script>
-    logout();       //make sure user is logged out
-  </script>
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>
