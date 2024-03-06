@@ -1,0 +1,64 @@
+i {
+    float: right;
+}
+
+#exit-icon {
+    position: relative;
+    left: 15pt;
+    margin: auto;
+}
+
+#incorporate-post-main {
+    margin-top: 10pt;
+    margin-bottom: 20pt;
+}
+
+.container {
+    position: relative;
+    left:-15pt;
+    width: 70%;
+    margin-bottom:25pt;
+}
+
+footer {
+    height:45pt;
+}
+
+.form-check {
+    background-color:#89A6FB;
+    border-radius: 25px;
+}
+
+.form-check-label{
+    position: relative;
+    left: 20pt;
+    color: white;
+}
+
+.form-check-input {
+    position: relative;
+    left:10pt;
+}
+
+#submit-div {
+    position: relative;
+    margin-top: 10pt;
+}
+
+#info-section {
+    position: relative;
+    left: 20pt;
+    padding: 20pt;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 5pt;
+    border-radius: 10px;
+}
+
+#submit-button {
+    position: relative;
+    left: 730pt;
+}
+
+
+

@@ -17,11 +17,11 @@ i {
     position: relative;
     left:-15pt;
     width: 70%;
-    margin-bottom:35pt;
+    margin-bottom:25pt;
 }
 
 footer {
-    height:35pt;
+    height: 45pt;
 }
 
 .form-check {
@@ -40,10 +40,20 @@ footer {
     left:10pt;
 }
 
-#submit-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#buttons-div {
+    margin-top: 10pt;
+}
+
+#submit-button {
+    position: relative;
+    left: 650pt;
+
+}
+
+#delete-button {
+    position: relative;
+    left: 650pt;
+
 }
 
 #info-section {
