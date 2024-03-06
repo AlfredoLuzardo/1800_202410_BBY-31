@@ -7,3 +7,8 @@ function loadSavedArticle(){
 }
 
 loadSavedArticle();
+
+function removeButton() {
+    console.log("Remove Clicked");
+    alert("Remove Clicked");
+}
