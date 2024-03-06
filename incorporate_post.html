@@ -1,0 +1,198 @@
+<html lang="en">
+
+<head>
+  <title>BBY-31 Application</title>
+  <meta name="BBY-31 application" content="My 1800 App">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Boostrap Library JS CDN go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+  <!-- Firebase 8 CDN, and jQuery go here-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  <!--Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
+
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/incorporate_post.css">
+
+  <!-- Other libraries go here -->
+</head>
+
+<body>
+  <!-- NavBar goes here -->
+  <nav id="navbarPlaceholder"></nav>
+
+  <!-- Incorporate Post Page -->
+  <div class="container" class="overflow-auto" class="rounded">
+
+    <div class="row" id="incorporate-post-main">
+      <div class="col" id="incorporate-post-title">
+        <h2>Incorporate Post</h2>
+      </div>
+      <div class="col" id="exit-icon">
+        <i class="fa-solid fa-x"></i>
+      </div>
+    </div>
+
+    <div id="info-section">
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="inputArticleLink">Article Link</label>
+              <input type="link" class="form-control" id="inputArticleLink"
+                placeholder="'E.g. https://www.cbc.ca/news/canada/british-columbia/crane-incident-vancouver-2600-block-victoria-1.7134234'">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="inputArticleTitle">Title</label>
+              <input type="link" class="form-control" id="inputArticleTitle" placeholder="'E.g. Crane Incident'">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="inputArticleContinent">Continent</label>
+              <input type="link" class="form-control" id="inputArticleContinent" placeholder="'E.g. North America'">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="inputArticleCountry">Country</label>
+              <input type="link" class="form-control" id="inputArticleCountry" placeholder="'E.g. Canada'">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="inputArticleCity">City (optional)</label>
+              <input type="link" class="form-control" id="inputArticleCity" placeholder="'E.g. Vancouver'">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="summaryFormControlTextarea1">Article Summary</label>
+              <textarea class="form-control" id="summaryFormControlTextarea1" rows="3"
+                placeholder="'British Columbia's workplace safety agency is meeting with employers and the union that represents crane operators following another crane incident at a construction site in Metro Vancouver.'"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- tags -->
+      <div class="row">
+
+        <div class="col">
+          <form>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleTag1">
+              <label class="form-check-label" for="exampleTag1">TAG</label>
+            </div>
+          </form>
+        </div class="col">
+
+        <div class="col">
+          <form>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleTag2">
+              <label class="form-check-label" for="exampleTag2">TAG</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="col">
+          <form>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleTag3">
+              <label class="form-check-label" for="exampleTag3">TAG</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="col">
+          <form>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleTag3">
+              <label class="form-check-label" for="exampleTag3">TAG</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="col">
+          <form>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleTag3">
+              <label class="form-check-label" for="exampleTag3">TAG</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="col">
+          <form>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleTag3">
+              <label class="form-check-label" for="exampleTag3">TAG</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" id="submit-div">
+        <button type="button" class="btn btn-primary" id="submit-button">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <nav id="footerPlaceholder"></nav>
+
+  <!-- JavaScript Functions go here -->
+  <script src="./scripts/firebaseAPI_BBY31.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>
