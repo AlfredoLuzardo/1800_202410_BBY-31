@@ -18,15 +18,24 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Articles</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Filter</a>
-          </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        
+        <form id="search-form" class="d-flex mx-auto" role="search">
+          <button id="search-button" class="btn btn-light" type="submit">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <input id="search-text" class="form-control" type="search" placeholder="Search for topics, events, & keywords" aria-label="Search">
+          <button id="filter-button" class="btn btn-light" onclick="">
+            <span class="material-symbols-outlined">filter_list</span>
+          </button>
         </form>
+
+        <div class="d-flex">
+          <a class="btn btn-outline-secondary" href="../index.html">Logout</a>
+        </div>
+
       </div>
     </div>
   </nav>
+
+<!-- Template navbar after login - used in skeleton.js -->
