@@ -1,8 +1,61 @@
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 0,
+  'FILL' 1,
   'wght' 400,
   'GRAD' 0,
-  'opsz' 24
+  'opsz' 48
 }
 
+#page-banner {
+  background-color: lightgreen;
+}
+
+.filter-button {
+  position: relative;
+  right: 12pt;
+  height: 10pt;
+}
+
+.filter {
+  text-decoration: none;
+  color: black;
+}
+
+#search-form {
+  margin: 0;
+  padding: 0;
+  width: 350pt;
+}
+
+#search-button {
+  border-radius: 10px 0px 0px 10px;
+  border-color: lightgrey;
+  border-right: 0;
+  background-color: white;
+  box-shadow: none;
+}
+
+#search-button:hover {
+  background-color: lightgray;
+}
+
+#search-text {
+  border-radius: 0px 0px 0px 0px;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
+  background-color: white;
+  border-color: lightgray;
+}
+
+#filter-button {
+  border-radius: 0px 10px 10px 0px;
+  border-left: 0;
+  box-shadow: none;
+  background-color: white;
+  border-color: lightgray;
+}
+
+#filter-button:hover {
+  background-color: lightgray;
+}
