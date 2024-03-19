@@ -59,3 +59,7 @@
 #filter-button:hover {
   background-color: lightgray;
 }
+
+#sticky {
+  text-align: center;
+}

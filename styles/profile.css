@@ -1,0 +1,16 @@
+.main {
+    display: grid;
+    padding: auto;
+    margin: 10pt;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "profile post post";
+    grid-gap: 0.5rem;
+}
+
+#profile {
+    grid-area: profile;
+}
+
+.userPostPlaceholder {
+    grid-area: post;
+}
