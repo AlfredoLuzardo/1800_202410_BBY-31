@@ -1,0 +1,34 @@
+i {
+    float: right;
+}
+
+#title-col {
+    display: flex;
+    align-items: center;
+}
+
+#info-div {
+    margin-top: 95pt;
+}
+
+#date p {
+    float: right;
+}
+
+h2 {
+    padding: 15pt;
+    padding-left: 30pt;
+}
+
+.card {
+    width: 100%;
+}
+
+#post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10pt;
+}
+
+

@@ -32,6 +32,7 @@
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/profile.css">
+  <link rel="stylesheet" href="./styles/post.css">
 
   <!-- Other libraries go here -->
 </head>
@@ -48,7 +49,7 @@
             <img src="https://th.bing.com/th/id/OIP.S171c9HYsokHyCPs9brbPwHaGP?rs=1&pid=ImgDetMain" alt="Admin"
               class="rounded-circle" width="100" height="100">
             <div class="mt-3">
-              <h4>John Doe</h4>
+              <p><span id="name-goes-here"></span></p>
             </div>
           </div>
         </div>
@@ -59,10 +60,10 @@
             <h6 class="mb-0">Date Joined</h6>
             <span class="text-secondary">January 31, 2024</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+          <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
             <h6 class="mb-0">Username:</h6>
             <span class="text-secondary">username123</span>
-          </li>
+          </li> -->
           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
             <h6 class="mb-0">
               Articles Seen</h6>
@@ -76,8 +77,49 @@
         </ul>
       </div>
     </div>
-    <div class="userPostPlaceholder"></div>
+
+    <div id="posts-go-here"></div>
+
   </div>
+
+  <!-- TEMPLATE (NOT DISPLAYED)-->
+  <template id="post-container">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col" id="title-col">
+            <!-- FOR JASON -> GO TO POST INFO PAGE -->
+            <a id="title" href="#"><h6 class="post-title">Post Title</h6></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row" id="info-image-div">
+          <div class="col-md-auto" id="image-container">
+            <img src="..." alt="..." class="post-image">
+          </div>
+          <div class="col" id="post-info-container">
+            <h6>Post Summary</h6>
+            <div class="row">
+              <div class="col">
+                <p class="card-text" id="post-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                  ante.
+                </p>
+              </div>
+            </div>
+            <div class="row" id="info-div">
+              <div class="col-md-auto">
+                <p>Posted by: <span class="post-owner"></span></p>
+              </div>
+              <div class="col" id="date">
+                <p>Date: <span class="post-timestamp"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 
   <!-- Footer goes here -->
   <nav id="stickyFooterPlaceholder"></nav>
