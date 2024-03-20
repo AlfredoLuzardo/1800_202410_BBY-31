@@ -17,7 +17,7 @@ function writePosts() {
         title: "Volunteers Clean Up Riverbank",
         summary: "A group of dedicated volunteers spent the weekend cleaning up litter along the riverbank. Their efforts aim to preserve the local ecosystem and promote environmental awareness.",
         image: "hike1",
-        owner: "John Davidson",
+        owner: "hike1",
         timestamp: "3/19/2024"
     });
 
@@ -64,4 +64,4 @@ function displayPostsDynamically(collection) {
 
 }
 
-displayPostsDynamically("posts");
+// displayPostsDynamically("posts");
