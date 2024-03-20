@@ -5,10 +5,18 @@ function getNameFromAuth() {
             // Do something for the currently logged-in user here: 
             console.log(user.uid); //print the uid in the browser console
             console.log(user.displayName);  //print the user name in the browser console
+
+            db.collection("users").doc(user.uid)
+                .onSnapshot(userDoc => {
+                    document.getElementById("dateJoined-goes-here").innerHTML = userDoc.data().joinDate;
+                    document.getElementById("country-goes-here").innerHTML = userDoc.data().country;
+                })
+
             userName = user.displayName;
 
+
             //method #1:  insert with JS
-            document.getElementById("name-goes-here").innerText = userName;    
+            document.getElementById("name-goes-here").innerText = userName;
 
             //method #2:  insert using jquery
             //$("#name-goes-here").text(userName); //using jquery

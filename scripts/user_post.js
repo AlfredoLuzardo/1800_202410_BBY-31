@@ -1,4 +1,4 @@
-// Loads post placeholder into position.
+// Loads post placeholder into position. CURRENTLY NOT USED
 function loadUserPost() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
