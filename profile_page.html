@@ -32,6 +32,8 @@
 
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/profile.css">
+  <link rel="stylesheet" href="./styles/post.css">
 
   <!-- Other libraries go here -->
 </head>
@@ -40,132 +42,194 @@
   <!-- NavBar goes here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <div class="container">
-    <div class="main-body">
-
-      <!-- Breadcrumb -->
-      <nav aria-label="breadcrumb" class="main-breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-          <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-        </ol>
-      </nav>
-      <!-- /Breadcrumb -->
-
-      <div class="row gutters-sm">
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex flex-column align-items-center text-center">
-                <img src="https://th.bing.com/th/id/OIP.S171c9HYsokHyCPs9brbPwHaGP?rs=1&pid=ImgDetMain" alt="Admin"
-                  class="rounded-circle" width="150">
-                <div class="mt-3">
-                  <h4>John Doe</h4>
-                  <p class="text-secondary mb-1">World Event User</p>
-                  <p class="text-muted font-size-sm">Unknown</p>
-                  <button class="btn btn-primary">Follow</button>
-                  <button class="btn btn-outline-primary">Message</button>
-                </div>
-              </div>
+  <div class="main">
+    <div class="col" class="profile">
+      <div class="card" class="profile-photo">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img src="https://th.bing.com/th/id/OIP.S171c9HYsokHyCPs9brbPwHaGP?rs=1&pid=ImgDetMain" alt="Admin"
+              class="rounded-circle" width="100" height="100">
+            <div class="mt-3">
+              <p><span id="name-goes-here"></span></p>
             </div>
           </div>
-          <div class="card mt-3">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                <h6 class="mb-0">Date Joined</h6>
-                <span class="text-secondary">January 31, 2024</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                <h6 class="mb-0">Username:</h6>
-                <span class="text-secondary">username123</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                <h6 class="mb-0">
-                  Articles Seen</h6>
-                <span class="text-secondary">10</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                <h6 class="mb-0">
-                  Artices Posted</h6>
-                <span class="text-secondary">5</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                <h6 class="mb-0">
-                  Comments</h6>
-                <span class="text-secondary">2</span>
-              </li>
-            </ul>
+        </div>
+      </div>
+      <div class="card" class="#profile-info">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+            <h6 class="mb-0">Date Joined</h6>
+            <span class="text-secondary" id="dateJoined-goes-here">January 31, 2024</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+            <h6 class="mb-0">
+              Articles Seen</h6>
+            <span class="text-secondary">10</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+            <h6 class="mb-0">
+              Artices Posted</h6>
+            <span class="text-secondary" id="">5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+            <h6 class="mb-0">
+              Country</h6>
+            <span class="text-secondary" id="country-goes-here">USA</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="posts-go-here">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col" id="title-col">
+            <a id="title" href="#"><h6 class="post-title">Volunteers Clean Up Riverbank</h6></a>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="card mb-3">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Username</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  username123
-                </div>
+      </div>
+      <div class="card-body">
+        <div class="row" id="info-image-div">
+          <div class="col-md-auto" id="image-container">
+            <img src="./images/hike1.jpg" alt="..." class="post-image">
+          </div>
+          <div class="col" id="post-info-container">
+            <h6>Post Summary</h6>
+            <div class="row">
+              <div class="col">
+                <p class="card-text" id="post-summary">A group of dedicated volunteers spent the weekend cleaning up litter along the riverbank. Their efforts aim to preserve the local ecosystem and promote environmental awareness.</p>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Full Name</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  User Name
-                </div>
+            </div>
+            <div class="row" id="info-div">
+              <div class="col-md-auto">
+                <p>Posted by: <span class="post-owner">Alfredo Luzardo</span></p>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Email</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  user@email.com
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Phone</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  123-456-7890
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Country</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  USA
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-12">
-                  <a class="btn btn-info " target="__blank"
-                    href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                </div>
+              <div class="col" id="date">
+                <p>Date: <span class="post-timestamp">3/19/2024</span></p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col" id="title-col">
+            <!-- FOR JASON -> GO TO POST INFO PAGE -->
+            <a id="title" href="#"><h6 class="post-title">Community Rally for Park Renovation</h6></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row" id="info-image-div">
+          <div class="col-md-auto" id="image-container">
+            <img src="./images/hike3.jpg" alt="..." class="post-image">
+          </div>
+          <div class="col" id="post-info-container">
+            <h6>Post Summary</h6>
+            <div class="row">
+              <div class="col">
+                <p class="card-text" id="post-summary">Residents gathered at City Hall to rally for the renovation of the local park. The proposed plans include new playground equipment, walking trails, and picnic areas.</p>
+              </div>
+            </div>
+            <div class="row" id="info-div">
+              <div class="col-md-auto">
+                <p>Posted by: <span class="post-owner">Alfredo Luzardo</span></p>
+              </div>
+              <div class="col" id="date">
+                <p>Date: <span class="post-timestamp">6/22/2023</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col" id="title-col">
 
+            <a id="title" href="#"><h6 class="post-title">Traffic Jam on Main Street</h6></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row" id="info-image-div">
+          <div class="col-md-auto" id="image-container">
+            <img src="./images/hike2.jpg" alt="..." class="post-image">
+          </div>
+          <div class="col" id="post-info-container">
+            <h6>Post Summary</h6>
+            <div class="row">
+              <div class="col">
+                <p class="card-text" id="post-summary">A major traffic jam occurred on Main Street today, causing delays for commuters. Authorities are advising drivers to seek alternate routes.</p>
+              </div>
+            </div>
+            <div class="row" id="info-div">
+              <div class="col-md-auto">
+                <p>Posted by: <span class="post-owner">Larry Smith</span></p>
+              </div>
+              <div class="col" id="date">
+                <p>Date: <span class="post-timestamp">5/17/2023</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- TEMPLATE (NOT DISPLAYED)-->
+  <template id="post-container">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col" id="title-col">
+            <!-- FOR JASON -> GO TO POST INFO PAGE -->
+            <a id="title" href="#"><h6 class="post-title">Post Title</h6></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row" id="info-image-div">
+          <div class="col-md-auto" id="image-container">
+            <img src="..." alt="..." class="post-image">
+          </div>
+          <div class="col" id="post-info-container">
+            <h6>Post Summary</h6>
+            <div class="row">
+              <div class="col">
+                <p class="card-text" id="post-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                  ante.
+                </p>
+              </div>
+            </div>
+            <div class="row" id="info-div">
+              <div class="col-md-auto">
+                <p>Posted by: <span class="post-owner"></span></p>
+              </div>
+              <div class="col" id="date">
+                <p>Date: <span class="post-timestamp"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <!-- Footer goes here -->
-  <nav id="footerPlaceholder"></nav>
+  <nav id="stickyFooterPlaceholder"></nav>
 
   <!-- JavaScript Functions go here -->
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/user_post.js"></script>
   <script src="./scripts/main.js"></script>
 </body>
 

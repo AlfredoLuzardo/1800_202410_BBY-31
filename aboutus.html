@@ -28,35 +28,44 @@
   <!--Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/post.css">
-  
+  <link rel="stylesheet" href="./styles/aboutus.css">
+
   <!-- Other libraries go here -->
 </head>
 
 <body>
-  <!-- NavBar goes here -->
+
+  <!-- NavBar -->
   <nav id="navbarPlaceholder"></nav>
 
-  <!-- Section for Listed Articles Matching Search -->
-  <h2>Articles about <span id="searched-text">&ltentered text from search bar&gt:</span></h2>
+  <!-- About Us Info -->
+  <div id="title-div">
+    <h2>About Us</h2>
+  </div>
 
-  <!-- Searched and filtered Articles go here-->
-  <div class="searchedArticlePlaceholder"></div>
-  <div class="searchedArticlePlaceholder"></div>
-  <div class="searchedArticlePlaceholder"></div>
+  <div id="aboutus-div">
+    <p>BBY-31 is developing a web application to help journalists and geographically isolated people spread awareness on
+      issues that are overshadowed, by giving them the ability to post or view articles and have them ranked by the
+      population.</p>
+  </div>
+
+  <div id="crowd-div">
+    
+    <p>It will be a system that is based on crowd-sourcing data, which allows for users to post articles, and choose a
+      location of where it occurred. People are able to comment, upvote, and downvote, which allows for visibility of
+      posts shown in scale (posts with the highest upvotes have the highest visible range).</p>
+  </div>
 
   <!-- Footer goes here -->
-  <nav id="footerPlaceholder"></nav>
+  <nav id="stickyFooterPlaceholder"></nav>
 
   <!-- JavaScript Functions go here -->
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/main.js"></script>
-  <script src="./scripts/searched_articles.js"></script>
 </body>
 
 </html>

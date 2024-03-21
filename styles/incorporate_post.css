@@ -25,13 +25,13 @@ footer {
 }
 
 .form-check {
+    text-align: center;
     background-color:#89A6FB;
     border-radius: 25px;
 }
 
 .form-check-label{
     position: relative;
-    left: 20pt;
     color: white;
 }
 
@@ -56,9 +56,5 @@ footer {
 }
 
 #submit-button {
-    position: relative;
-    left: 730pt;
+    float:right;
 }
-
-
-

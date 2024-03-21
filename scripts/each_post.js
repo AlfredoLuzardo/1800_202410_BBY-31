@@ -6,7 +6,7 @@
 
 // NEED TO GET THE CORRECT ARTICLE DATA IN THIS FUNCTION LATER,
 // OR CALL ANOTHER FUNCTION TO DISPLAY THE INFORMATION
-let articleCardList = document.querySelectorAll(".articles-section");
+let articleCardList = document.querySelectorAll(".post-container");
 // Null check and must have at least one article in the list
 if (articleCardList && articleCardList.length > 0) {
     articleCardList.forEach((element) => {

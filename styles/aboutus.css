@@ -1,0 +1,20 @@
+#title-div {
+    padding: 20pt;
+    text-align: center;
+}
+
+#aboutus-div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    width: 50%;
+}
+
+#crowd-div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,28 @@
+.main {
+    display: grid;
+    padding: auto;
+    margin: 10pt;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "profile post post";
+    grid-gap: 0.5rem;
+}
+
+#profile {
+    grid-area: profile;
+}
+
+#posts-go-here {
+    grid-area: post;
+}
+
+.post-image {
+    width: 100%;
+}
+
+#image-container {
+    width: 30%;
+}
+
+#info-image-div {
+    height: fit-content;
+}
