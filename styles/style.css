@@ -10,21 +10,25 @@
   background-color: lightgreen;
 }
 
+/*
 .filter-button {
   position: relative;
   right: 12pt;
   height: 10pt;
 }
-
+*/
+/*
 .filter {
   text-decoration: none;
   color: black;
 }
+*/
 
 #search-form {
   margin: 0;
   padding: 0;
   width: 350pt;
+  height: 30pt;
 }
 
 #search-button {
@@ -48,6 +52,16 @@
   border-color: lightgray;
 }
 
+#filter-button::after { 
+  content: none; 
+}
+/*
+.location-button::after { 
+  display: flex;
+  justify-content: flex-end;
+}
+*/
+
 #filter-button {
   border-radius: 0px 10px 10px 0px;
   border-left: 0;
@@ -59,3 +73,17 @@
 #filter-button:hover {
   background-color: lightgray;
 }
+
+.location-button {
+  margin: 0;
+}
+
+.dropdown-divider {
+  margin: 0;
+}
+
+#reset-filters-button {
+  font-size: 10pt;
+}
+
+/*

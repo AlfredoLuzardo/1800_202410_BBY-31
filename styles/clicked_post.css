@@ -1,0 +1,37 @@
+.article-container {
+    position: relative;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: gray;
+    width: 90%;
+    padding: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.post-header {
+    height: auto;
+    margin-bottom: 2em;
+    display:flex;
+}
+
+.post-header .post-header-contents {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-footer-item .bookmark-add-icon-div {
+    display: inline-block;
+}
+
+.header-footer-item .post-title {
+    display: inline-block;
+    text-align: left;
+}
+
+.post-title .post-titletext {
+    font-size: 20pt;
+}

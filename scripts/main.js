@@ -1,3 +1,17 @@
+//---------------------------------------------------
+// This function loads articles into main.html
+//---------------------------------------------------
+function loadTopArticles(){
+    firebase.auth().onAuthStateChanged(function (user){
+        if (user){
+            //! Temporary - will need to replace with actual data from firestore later
+            console.log($('.topArticlePlaceholder').load('./text/each_saved_article.html')); //! temporarily using each_saved_article, but will not be from saved articles later
+        } 
+    });
+}
+
+loadTopArticles();
+
 function getNameFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -23,3 +37,6 @@ function getNameFromAuth() {
     });
 }
 getNameFromAuth(); //run the function
+
+
+

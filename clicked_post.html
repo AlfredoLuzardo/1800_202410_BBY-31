@@ -1,0 +1,223 @@
+<html lang="en">
+
+<head>
+  <title>BBY-31 Application</title>
+  <meta name="BBY-31 application" content="My 1800 App">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Boostrap Library JS CDN go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+  <!-- Firebase 8 CDN, and jQuery go here-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  <!--Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/clicked_post.css">
+  
+  <!-- Other libraries go here -->
+
+</head>
+
+<body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+
+    <!-- our own navbar goes here -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <!-- Article Info Page -->
+    <div class="article-container container-fluid">
+      <div class="post-header">
+        <span style="width:100%;" class="post-header-contents">
+          <div class="post-title"><span class="post-titletext">&ltPost title here&gt</span></div>
+          <div class="bookmark-add-icon-div"><i class="fa-regular fa-bookmark fa-2xl"></i></div>
+        </span>
+      </div>
+
+      <img src="https://dummyimage.com/2500x500/000/fff&text=placeholder+image" class="image-placeholder img-fluid" alt="Selected Article Image" class="card-img-top" alt="...">
+      <p></p>
+      <div class="article-text-content">
+        <p>
+          <span class="post-content-placeholder">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Egetvelit aliquet sagittis id consectetur purus ut. Fringillaest ullamcorper eget nulla.
+          </span>
+        </p>
+      </div>
+      <div class="row" class="info-div">
+        <div class="col-md-auto">
+          <p>Posted by: <span class="user-posted-placeholder">user</span></p>
+        </div>
+        <div class="col-md-auto">
+          <p>&#x2022</p>
+        </div>
+        <div class="col-md-auto">
+          <p>Date: <span class="date-posted-placeholder">March 6, 2024</span></p>
+        </div>
+      </div>
+      
+      <section id="comment-section">
+        <h2>Comments</h2>
+        <!-- Comments will be displayed here -->
+        <template id="comment-Template">
+          <h3 class="comment-username">User Name</h3>
+          <p class="comment-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+          </p>
+        </template>
+      </section>
+    </div>
+
+    <!-- our own footer goes here-->
+    <nav id="footerPlaceholder"></nav>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="./scripts/firebaseAPI_BBY31.js"></script> <!-- allows use of firebase API functions with HTML js code linked to HTML file-->
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/main.js"></script>
+    <!--<script src="./scripts/clicked_article.js"></script> WILL NEED TO ADD THIS FILE TO ADD GENERIC CARD TEMPLATE OF SELECTED ARTICLE INFORMATION-->
+
+</body>
+
+</html>

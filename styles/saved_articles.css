@@ -24,9 +24,13 @@ h2 {
     width: 85%;
 }
 
-#saved-articles-section {
+.articles-section {
     display:flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10pt;
+}
+
+.articles-section:hover {
+    cursor: pointer;
 }
