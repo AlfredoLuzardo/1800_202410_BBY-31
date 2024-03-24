@@ -24,17 +24,16 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-  
+
   <!--Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
-
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./post.css">
-
+  <link rel="stylesheet" href="./styles/post.css">
+  
   <!-- Other libraries go here -->
 </head>
 
@@ -42,20 +41,15 @@
   <!-- NavBar goes here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <div id="page-banner" class="page-banner p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold">Welcome <span id="name-goes-here"></span></h1>
-      <p class="col-md-8 fs-4">Let's explore world events.</p>
+  <!-- Thank you message -->
+  <div class="card text-center">
+    <div class="card-header">
+      Post incorporated successfully!
+    </div>
+    <div class="card-body">
+      <a href="main.html" class="btn btn-primary">See Top Posts</a>
     </div>
   </div>
-
-  <!-- Top Articles Section -->
-  <h2>Top Articles</h2>
-
-  <!-- Top Articles go here-->
-  <div class="topArticlePlaceholder"></div>
-  <div class="topArticlePlaceholder"></div>
-  <div class="topArticlePlaceholder"></div>
 
   <!-- Footer goes here -->
   <nav id="stickyFooterPlaceholder"></nav>
@@ -64,7 +58,7 @@
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/main.js"></script>
-
+  <script src="./scripts/searched_articles.js"></script>
 </body>
 
 </html>

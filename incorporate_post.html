@@ -54,12 +54,24 @@
     </div>
 
     <div id="info-section">
+
       <div class="row">
         <div class="col">
           <form>
             <div class="form-group">
-              <label for="inputArticleLink">Article Link</label>
-              <input type="link" class="form-control" id="inputArticleLink"
+              <label for="inputPostTitle">Title</label>
+              <input type="link" class="form-control" id="inputPostTitle" placeholder="'E.g. Crane Incident'">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="inputPostLink">Link of Post</label>
+              <input type="link" class="form-control" id="inputPostLink"
                 placeholder="'E.g. https://www.cbc.ca/news/canada/british-columbia/crane-incident-vancouver-2600-block-victoria-1.7134234'">
             </div>
           </form>
@@ -70,13 +82,14 @@
         <div class="col">
           <form>
             <div class="form-group">
-              <label for="inputArticleTitle">Title</label>
-              <input type="link" class="form-control" id="inputArticleTitle" placeholder="'E.g. Crane Incident'">
+              <label for="inputImageUrl">Image url</label>
+              <input type="link" class="form-control" id="inputImageUrl"
+                placeholder="URL of image here">
             </div>
           </form>
         </div>
       </div>
-
+<!--
       <div class="row">
         <div class="col">
           <form>
@@ -109,12 +122,12 @@
           </form>
         </div>
       </div>
-
+-->
       <div class="row">
         <div class="col">
           <form>
             <div class="form-group">
-              <label for="summaryFormControlTextarea1">Article Summary</label>
+              <label for="summaryFormControlTextarea1">Post Summary</label>
               <textarea class="form-control" id="summaryFormControlTextarea1" rows="3"
                 placeholder="'British Columbia's workplace safety agency is meeting with employers and the union that represents crane operators following another crane incident at a construction site in Metro Vancouver.'"></textarea>
             </div>
@@ -123,6 +136,7 @@
       </div>
 
       <!-- tags -->
+      <!-- NEED TO DECIDE IF WE WANT TO KEEP TAGS OR NOT -->
       <div class="row">
 
         <div class="col">
@@ -182,7 +196,7 @@
     </div>
     <div class="row">
       <div class="col" id="submit-div">
-        <button type="button" class="btn btn-primary" id="submit-button" onclick="submitButton()">Submit</button>
+        <button type="button" class="btn btn-primary" id="submit-button" onclick="incorporatePost()">Submit</button>
       </div>
     </div>
   </div>
