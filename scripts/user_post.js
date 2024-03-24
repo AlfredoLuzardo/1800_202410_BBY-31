@@ -1,3 +1,5 @@
+// USER PROFILE PAGE ()
+
 // Loads post placeholder into position. CURRENTLY NOT USED
 function loadUserPost() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -65,3 +67,7 @@ function displayPostsDynamically(collection) {
 }
 
 // displayPostsDynamically("posts");
+
+
+
+

@@ -21,3 +21,6 @@ searchForm.addEventListener("submit", function(event) {
         window.location.href = 'searched_articles.html';
     }
 });
+
+
+// SAVE SERACH TEXT VALUE (MAYBE GET FROM LOCALSTORAGE) AND PASS INTO searched_articles.js)

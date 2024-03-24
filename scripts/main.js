@@ -19,12 +19,18 @@ function getNameFromAuth() {
             // Do something for the currently logged-in user here: 
             console.log(user.uid);
             console.log(user.displayName);
-
+            
+            //**************************************************************************************************************************************************************
+            // Get the time that the user joined
+            // PUT IN NEW JS FILE!
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {
                     document.getElementById("dateJoined-goes-here").innerHTML = userDoc.data().joinDate;
                     document.getElementById("country-goes-here").innerHTML = userDoc.data().country;
                 })
+            //****************************************************************************************************************** */
+
+            // GET POST VIEW HISTORY FROM USER COLLECTION - DISPLAY VIEW COUNT
 
             userName = user.displayName;
             document.getElementById("name-goes-here").innerText = userName;
@@ -36,6 +42,10 @@ function getNameFromAuth() {
     });
 }
 getNameFromAuth(); //run the function
+
+
+//**************************************************************************************************************************************************************
+// PUT IN A FILE CALLED profile.js
 
 // //ATTEMPT TO READ FROM THE POSTS ARRAY IN USERS COLLECTION.
 function displayUserPostsDynamically() {

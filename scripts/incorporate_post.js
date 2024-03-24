@@ -9,7 +9,7 @@ function incorporatePost() {
         let postLink = document.getElementById('inputPostLink').value;
         let imageUrl = document.getElementById('inputImageUrl').value;
         let postSummary = document.getElementById('summaryFormControlTextarea1').value;
-   
+    
         //b) add a new post to the posts document with filled out fields in Firestore
         var postsCollection = db.collection('posts');
         postsCollection.add({
@@ -25,7 +25,8 @@ function incorporatePost() {
             console.log("Post document successfully added!");
             window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
         });
-
+        
+        // NEED TO FIX
         //c) add a new post to the posts document to the posts subcollection in users colletion in Firestore
         var userPostsCollection = db.collection('users').doc(user.uid).collection('posts');
         userPostsCollection.add({
