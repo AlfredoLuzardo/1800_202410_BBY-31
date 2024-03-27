@@ -20,6 +20,7 @@ function incorporatePost() {
                 link: postLink,
                 image: postImage,
                 summary: postSummary,
+                owner: user.displayName,
                 date: date
             })
 
