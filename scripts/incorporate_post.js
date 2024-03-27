@@ -1,48 +1,38 @@
-
+var currentUser;
 function incorporatePost() {
+
+    const date = new Date().toLocaleDateString();
     console.log("Submit Clicked");
-    //alert("Submit Clicked");
-        //enter code here
-   
-        //a) get user entered values
-        let postTitle = document.getElementById('inputPostTitle').value;       //get the value of the field with id="inputPostTitle"
-        let postLink = document.getElementById('inputPostLink').value;
-        let imageUrl = document.getElementById('inputImageUrl').value;
-        let postSummary = document.getElementById('summaryFormControlTextarea1').value;
-    
-        //b) add a new post to the posts document with filled out fields in Firestore
-        var postsCollection = db.collection('posts');
-        postsCollection.add({
-            title: postTitle,
-            link: postLink,
-            image: imageUrl,
-            summary: postSummary,
-        //lat: 49.2467097082573,
-        //lng: -122.9187029619698,
-        //last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-        })
-        .then(() => {
-            console.log("Post document successfully added!");
-            window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
-        });
-        
-        // NEED TO FIX
-        //c) add a new post to the posts document to the posts subcollection in users colletion in Firestore
-        var userPostsCollection = db.collection('users').doc(user.uid).collection('posts');
-        userPostsCollection.add({
-            title: postTitle,
-            link: postLink,
-            image: imageUrl,
-            summary: postSummary,
-        //lat: 49.2467097082573,
-        //lng: -122.9187029619698,
-        //last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-        })
-        .then(() => {
-            console.log("User Post document successfully added!");
-        });
-   
-        //d) disable edit (finish later)
+
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid);
+            //a) get user entered values
+            let postTitle = document.getElementById('inputPostTitle').value;       //get the value of the field with id="inputPostTitle"
+            let postLink = document.getElementById('inputPostLink').value;
+            let postImage = document.getElementById('inputImage').value;
+            let postSummary = document.getElementById('summaryFormControlTextarea1').value;
+
+
+            var postsCollection = db.collection('posts');
+            postsCollection.add({
+                title: postTitle,
+                link: postLink,
+                image: postImage,
+                summary: postSummary,
+                date: date
+            })
+
+                .then((docRef) => {
+                    let postID = docRef.id;
+                    alert(postID);
+                    localStorage.setItem('postID', postID);
+                    console.log("Post document successfully added!");
+                    window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
+                });
+        }
+    })
+    //d) disable edit (finish later)
 }
 
 function exitButton() {
