@@ -11,8 +11,10 @@ function savePosts(postID){
             currentUser = db.collection("users").doc(user.uid);
             console.log(user)
             currentUser.update({
+                totalposts: firebase.firestore.FieldValue.increment(1),
                 myposts: firebase.firestore.FieldValue.arrayUnion(postID)
-            })
+            });
+            
         }
     })
 }

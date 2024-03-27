@@ -21,7 +21,7 @@ function getNameFromAuth() {
             console.log(user.displayName);
             userName = user.displayName;
             if (user.displayName != null) {
-                document.getElementById("name-goes-here").innerHTML = `Test: ${user.displayName}`;
+                document.getElementById("name-goes-here").innerHTML = user.displayName;
             }
 
             //**************************************************************************************************************************************************************
