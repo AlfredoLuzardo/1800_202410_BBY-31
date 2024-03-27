@@ -1,4 +1,23 @@
 var currentUser;
+var ImageFile;
+function listenFileSelect() {
+      // listen for file selection
+      var fileInput = document.getElementById("inputImage"); // pointer #1
+      const image = document.getElementById("image-goes-here"); // pointer #2
+
+			// When a change happens to the File Chooser Input
+
+      if (fileInput != null){
+        fileInput.addEventListener('change', function (e) {
+            ImageFile = e.target.files[0];   //Global variable
+            var source = URL.createObjectURL(ImageFile);
+            image.src = source; // Display this image
+        })
+      }
+      
+}
+listenFileSelect();
+
 function incorporatePost() {
 
     const date = new Date().toLocaleDateString();
@@ -28,6 +47,7 @@ function incorporatePost() {
                     let postID = docRef.id;
                     alert(postID);
                     localStorage.setItem('postID', postID);
+                    uploadPic(postID)
                     console.log("Post document successfully added!");
                     window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
                 });
@@ -41,38 +61,36 @@ function exitButton() {
     alert("Exit Clicked");
 }
 
-/*
-var currentUser;               //points to the document of the user who is logged in
-function populateUserInfo() {
-            firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
-                if (user) {
 
-                    //go to the correct user document by referencing to the user uid
-                    currentUser = db.collection("users").doc(user.uid)
-                    //get the document for current user.
-                    currentUser.get()
-                        .then(userDoc => {
-                            //get the data fields of the user
-                            let userName = userDoc.data().name;
-                            let userSchool = userDoc.data().school;
-                            let userCity = userDoc.data().city;
 
-                            //if the data fields are not empty, then write them in to the form.
-                            if (userName != null) {
-                                document.getElementById("nameInput").value = userName;
-                            }
-                            if (userSchool != null) {
-                                document.getElementById("schoolInput").value = userSchool;
-                            }
-                            if (userCity != null) {
-                                document.getElementById("cityInput").value = userCity;
-                            }
+function uploadPic(postID) {
+    alert("inside uploadPic " + postID);
+    var storageRef = storage.ref("images/" + postID + ".jpg");
+
+    storageRef.put(ImageFile)   //global variable ImageFile
+       
+                   // AFTER .put() is done
+        .then(function () {
+            alert('2. Uploaded to Cloud Storage.');
+            storageRef.getDownloadURL()
+
+                 // AFTER .getDownloadURL is done
+                .then(function (url) { // Get URL of the uploaded file
+                    alert("3. Got the download URL.");
+
+                    // Now that the image is on Storage, we can go back to the
+                    // post document, and update it with an "image" field
+                    // that contains the url of where the picture is stored.
+                    db.collection("posts").doc(postID).update({
+                            "image": url // Save the URL into users collection
                         })
-                } else {
-                    // No user is signed in.
-                    console.log ("No user is signed in");
-                }
-            });
-        }
-*/
+                         // AFTER .update is done
+                        .then(function () {
+                            alert('4. Added pic URL to Firestore.');
+                        })
+                })
+        })
+        .catch((error) => {
+             console.log("error uploading to cloud storage");
+        })
+}

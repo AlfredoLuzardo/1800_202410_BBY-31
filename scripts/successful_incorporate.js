@@ -1,7 +1,7 @@
 var postID = localStorage.getItem("postID");
 var currentUser;
 
-console.log("postID");
+console.log(postID);
 
 // Function to save posts to an array.
 function savePosts(postID){
@@ -20,3 +20,4 @@ function savePosts(postID){
 }
 
 savePosts(postID);
+

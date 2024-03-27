@@ -19,9 +19,10 @@ function getNameFromAuth() {
             // Do something for the currently logged-in user here: 
             console.log(user.uid);
             console.log(user.displayName);
+            nameHTML = document.getElementById("name-goes-here");
             userName = user.displayName;
-            if (user.displayName != null) {
-                document.getElementById("name-goes-here").innerHTML = user.displayName;
+            if (nameHTML != null) {
+                nameHTML.innerHTML = user.displayName;
             }
 
             //**************************************************************************************************************************************************************
@@ -72,7 +73,7 @@ function displayPostsDynamically(collection) {
                 newcard.querySelector('#post-summary').innerHTML = summary;
                 newcard.querySelector('.post-owner').innerHTML = owner;
                 newcard.querySelector('.post-timestamp').innerHTML = timestamp;
-                newcard.querySelector('.post-image').src = `./images/${image}.jpg`;
+                newcard.querySelector('.post-image').src = `./images/${image}`;
 
                 document.getElementById(collection + "-go-here").appendChild(newcard);
             })
