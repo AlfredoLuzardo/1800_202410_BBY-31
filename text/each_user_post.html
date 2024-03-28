@@ -1,46 +1,57 @@
 <!-- For styling the template user posts -->
 <link rel="stylesheet" href="./styles/post.css">
 
-<div class="post-container">
-      <div class="card">
-        <div class="card-header">
-          <div class="row">
-            <div class="col" id="title-col">
-              <!-- FOR JASON -> GO TO POST INFO PAGE - DONE by Jason-->
-              <h5 id="title" class="post-title">Post Title</h5>
-            </div>
-            <div class="col">
-              <i class="fa-solid fa-x" onclick="removeButton()"></i>
-            </div>
-          </div>
+<!-- Will need to fix and add js code to skeleton.js to allow this to be loaded 
+    into each of the four files post_history.html, profile_page,html, 
+    searched_articles.html, main.html -->
+<template class="post-container">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col" id="title-col">
+          <!-- FOR JASON -> GO TO POST INFO PAGE - DONE by Jason-->
+          <h5 id="title" class="post-title">Post Title</h5>
+        </div>
+        <div class="col">
+          <i class="fa-solid fa-x" onclick="removeButton()"></i>
+        </div>
       </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-auto">
-            <img src="https://dummyimage.com/200x200/000/fff&text=place+holder+image" alt="Article Image" class="post-image">
-          </div>
-          <div class="col">
-            <h6>Post Summary</h6>
-            <div class="row">
-              <div class="col">
-                <p class="card-text" class="post-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                  ante.
-                </p>
-              </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-auto">
+          <img src="https://dummyimage.com/200x200/000/fff&text=place+holder+image" alt="Article Image"
+            class="post-image">
+        </div>
+        <div class="col">
+          <h6>Post Summary</h6>
+          <div class="row">
+            <div class="col">
+              <p class="card-text" class="post-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                posuere erat a
+                ante.
+              </p>
             </div>
-            <div class="row" id="info-div">
-              <div class="col-md-auto">
-                <p>Posted by: <span class="post-owner"></span></p>
-              </div>
-              <div class="col" id="date">
-                <p>Date: <span class="post-timestamp"></span></p>
-              </div>
+          </div>
+          <div class="row"> <!-- needs styling to move to correct position -->
+            <div class="col">
+              <button type="button" class="btn btn-primary" id="see-post-button"
+                onclick="goToArticle()">Read more</button>
+            </div>
+          </div>
+          <div class="row" id="info-div">
+            <div class="col-md-auto">
+              <p>Posted by: <span class="post-owner"></span></p>
+            </div>
+            <div class="col" id="date">
+              <p>Date: <span class="post-timestamp"></span></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-</div>
+  </div>
+</template>
 
 <!--JS file for making each article info card clickable, and linking to clicked_post.html-->
-<script src="../scripts/each_post.js"></script>
+<script src="../scripts/each_listed_post.js"></script>

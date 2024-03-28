@@ -28,10 +28,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10pt;
+    margin-bottom: 10pt; /* need to fix */
 }
 
+/*
 .post-container:hover {
     cursor: pointer;
 }
-
+*/

@@ -1,6 +1,7 @@
 //---------------------------------------------------
 // This function loads articles into main.html
 //---------------------------------------------------
+/*
 function loadTopArticles() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -11,6 +12,7 @@ function loadTopArticles() {
 }
 
 loadTopArticles();
+*/
 
 function getNameFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
@@ -27,12 +29,12 @@ function getNameFromAuth() {
 
             //**************************************************************************************************************************************************************
             // Get the time that the user joined
-            // PUT IN NEW JS FILE!
+            // PUT IN NEW JS FILE
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {
                     const jdHTML = document.getElementById("dateJoined-goes-here");
                     const cHTML = document.getElementById("country-goes-here");
-                    let jd = userDoc.data().joinDate;
+/*                    let jd = userDoc.data().joinDate;                                         // Need to fix
                     let c = userDoc.data().country;
                     if (jdHTML !== null){
                         jdHTML.innerHTML = jd;
@@ -40,7 +42,8 @@ function getNameFromAuth() {
 
                     if (cHTML !== null){
                         cHTML.innerHTML = c;
-                    }   
+                    }  
+*/ 
                 })
             //****************************************************************************************************************** */
 
@@ -56,6 +59,9 @@ function getNameFromAuth() {
 }
 getNameFromAuth(); //run the function
 
+
+// Remove and replace with displayTopPosts() function
+/*
 function displayPostsDynamically(collection) {
     let postTemplate = document.getElementById("post-container");
 
@@ -80,5 +86,6 @@ function displayPostsDynamically(collection) {
         })
 
 }
+*/
 
 // displayPostsDynamically("posts");

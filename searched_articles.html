@@ -42,14 +42,21 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Section for Listed Articles Matching Search -->
-  <h2>Articles about <span id="searched-text">&ltentered text from search bar&gt:</span></h2>
+  <h2>Articles about <span id="searched-text">&ltentered text from search bar&gt:</span></h2> <!-- Need to fix -->
 
   <!-- CREATE CONTAINER FOR LIST, AND A TEMPLATE FOR EACH ARTICLE IN THE LIST TO BE LOADED FROM search_articles.js, and DISPLAYED ON THIS PAGE -->
-  
+  <!-- Saved posts container -->
+  <div id="searched-posts-go-here"></div>
+
+  <!-- Template placeholder for a post in searched_posts.html, not displayed -->
+  <template id="searched-post-template"></template>
+
   <!-- Searched and filtered Articles go here-->
+  <!-- 
   <div class="searchedArticlePlaceholder"></div>
   <div class="searchedArticlePlaceholder"></div>
   <div class="searchedArticlePlaceholder"></div>
+   -->
 
   <!-- Footer goes here -->
   <nav id="stickyFooterPlaceholder"></nav>
@@ -58,6 +65,7 @@
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/main.js"></script>
+  <script src="./scripts/displayPosts.js"></script>
   <script src="./scripts/searched_articles.js"></script>
 </body>
 

@@ -1,6 +1,7 @@
 //---------------------------------------------------
 // This function loads articles into searched_articles.html
 //---------------------------------------------------
+/*
 function loadSearchedArticle(){
     firebase.auth().onAuthStateChanged(function (user){
         if (user){
@@ -11,6 +12,7 @@ function loadSearchedArticle(){
 }
 
 loadSearchedArticle();
+*/
 
 
 // Create function to serach through firestore posts collection for postname (tags?) AND LOAD THE MATCHING ONES INTO serached_articles.js

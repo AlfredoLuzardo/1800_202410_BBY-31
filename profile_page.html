@@ -79,16 +79,21 @@
         </ul>
       </div>
     </div>
-    <div id="posts-go-here"></div>
+    
+    <!-- User posts container -->
+    <div id="user-posts-go-here"></div>
   </div>
 
-  <!-- TEMPLATE (NOT DISPLAYED)-->
+  <!-- Template placeholder for a post in profile_page.html, not displayed -->
+  <template id="user-post-template"></template>
+
+<!--    TEMPLATE (NOT DISPLAYED)
   <template id="post-container">
     <div class="card">
       <div class="card-header">
         <div class="row">
           <div class="col" id="title-col">
-            <!-- FOR JASON -> GO TO POST INFO PAGE -->
+            FOR JASON -> GO TO POST INFO PAGE
             <a id="title" href="#"><h6 class="post-title">Post Title</h6></a>
           </div>
         </div>
@@ -120,6 +125,8 @@
       </div>
     </div>
   </template>
+ -->
+
 
   <!-- HAVE AN EDIT BUTTON UNDER PROFILE INFORMATION (REFER TO DEMO10 TO SEE HOW TO EDIT AND PREVENT FORM CHANGES)-->
 
@@ -129,6 +136,7 @@
   <!-- JavaScript Functions go here -->
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/displayPosts.js"></script>
   <script src="./scripts/profile.js"></script>
   <script src="./scripts/main.js"></script>
 </body>

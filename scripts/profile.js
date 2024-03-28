@@ -14,6 +14,11 @@ loadUserPost();
 
 // Displays the posts itself. No function to pass it to yet.
 function displayMyPosts() {
+    // Save the name of this function as a String to pass into 
+    // displayPostDynamically (simple way to allow displayPostDynamically 
+    // function to determine which function called it)
+    var functionName = "displayPostHistory";
+
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             db.collection("users").doc(user.uid).get()
@@ -21,32 +26,16 @@ function displayMyPosts() {
             var myposts = userDoc.data().myposts;
             console.log(myposts);
 
-            let postTemplate = document.getElementById("post-container");
-
             myposts.forEach(thisPostID => {
                 db.collection("posts").doc(thisPostID).get().then(doc => {
-                    var title = doc.data().title;
-                    var summary = doc.data().summary;
-                    var owner = doc.data().owner;
-                    var date = doc.data().date;
-                    var image = doc.data().image;
-
-                    let newcard = postTemplate.content.cloneNode(true);
-                    newcard.querySelector('.post-title').innerHTML = title;
-                    newcard.querySelector('#post-summary').innerHTML = summary;
-                    newcard.querySelector('.post-owner').innerHTML = owner;
-                    newcard.querySelector('.post-timestamp').innerHTML = date;
-                    newcard.querySelector('.post-image').src = `./images/${image}.jpg`;
-
-                    document.getElementById("posts-go-here").appendChild(newcard);
+                    // Call displayPostDynamically function in displayPosts.js file,
+                    // passing in the current document in the history array
+                    displayPostDynamically(doc, functionName);
                 })
-
             })
         })
         }
     });
-
-    
 }
 
 displayMyPosts();

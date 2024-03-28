@@ -44,24 +44,29 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Saved Articles Section -->
-  <h2>Saved Articles</h2>
+  <h2>Post View History</h2>
 
   <!-- TO DO - USE saved_articles.js TO LOAD IN ARTICLES WHEN SAVED
     USE <template> element instead of div for placeholders
 
     Original Placeholders (each_user_post.html content currently 
     being loaded into these placeholders by saved_articles.js): -->
+  
+  <!-- Viewed posts container -->
+  <div id="viewed-posts-go-here"></div>
 
-  <div id="posts-go-here"></div>
+  <!-- Template placeholder for a post in post_history.html, not displayed -->
+  <template id="viewed-post-template"></template>
 
-  <!-- TEMPLATE (NOT DISPLAYED)-->
+<!-- 
+   TEMPLATE (NOT DISPLAYED)
   <template id="post-container">
     <div class="card">
       <div class="card-header">
         <div class="row">
           <div class="col" id="title-col">
-            <!-- FOR JASON -> GO TO POST INFO PAGE -->
-            <a id="title" href="#">
+            FOR JASON -> GO TO POST INFO PAGE
+            <a id="title" href="#">  
               <h6 class="post-title">Post Title</h6>
             </a>
           </div>
@@ -95,6 +100,7 @@
       </div>
     </div>
   </template>
+-->
 
   <!-- Footer goes here -->
   <nav id="stickyFooterPlaceholder"></nav>
@@ -103,6 +109,7 @@
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/main.js"></script>
+  <script src="./scripts/displayPosts.js"></script>
   <script src="./scripts/post_history.js"></script>
 </body>
 

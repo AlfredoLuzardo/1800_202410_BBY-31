@@ -47,13 +47,13 @@ function incorporatePost() {
                     let postID = docRef.id;
                     alert(postID);
                     localStorage.setItem('postID', postID);
-                    uploadPic(postID)
+                    //uploadPic(postID) Need to fix
                     console.log("Post document successfully added!");
                     window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
                 });
         }
     })
-    //d) disable edit (finish later)
+    // disable edit (finish later)
 }
 
 function exitButton() {
@@ -63,6 +63,7 @@ function exitButton() {
 
 
 
+// Need to fix
 function uploadPic(postID) {
     alert("inside uploadPic " + postID);
     var storageRef = storage.ref("images/" + postID + ".jpg");
