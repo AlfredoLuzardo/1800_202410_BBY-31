@@ -17,7 +17,7 @@ function displayMyPosts() {
     // Save the name of this function as a String to pass into 
     // displayPostDynamically (simple way to allow displayPostDynamically 
     // function to determine which function called it)
-    var functionName = "displayPostHistory";
+    var functionName = "displayMyPosts";
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {

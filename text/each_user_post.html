@@ -4,13 +4,13 @@
 <!-- Will need to fix and add js code to skeleton.js to allow this to be loaded 
     into each of the four files post_history.html, profile_page,html, 
     searched_articles.html, main.html -->
-<template class="post-container">
+<template id="post-container">
   <div class="card">
     <div class="card-header">
       <div class="row">
         <div class="col" id="title-col">
           <!-- FOR JASON -> GO TO POST INFO PAGE - DONE by Jason-->
-          <h5 id="title" class="post-title">Post Title</h5>
+          <h5 id="title"><span id="post-title">Post Title</span></h5>
         </div>
         <div class="col">
           <i class="fa-solid fa-x" onclick="removeButton()"></i>
@@ -21,13 +21,13 @@
       <div class="row">
         <div class="col-md-auto">
           <img src="https://dummyimage.com/200x200/000/fff&text=place+holder+image" alt="Article Image"
-            class="post-image">
+            id="post-image">
         </div>
         <div class="col">
           <h6>Post Summary</h6>
           <div class="row">
             <div class="col">
-              <p class="card-text" class="post-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              <p class="card-text" id="post-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
                 posuere erat a
                 ante.
               </p>
@@ -41,10 +41,10 @@
           </div>
           <div class="row" id="info-div">
             <div class="col-md-auto">
-              <p>Posted by: <span class="post-owner"></span></p>
+              <p>Posted by: <span id="post-owner"></span></p>
             </div>
             <div class="col" id="date">
-              <p>Date: <span class="post-timestamp"></span></p>
+              <p>Date: <span id="post-timestamp"></span></p>
             </div>
           </div>
         </div>

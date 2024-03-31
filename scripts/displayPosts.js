@@ -16,11 +16,14 @@ function displayPostDynamically(currentDoc, funcNameCalledBy) {
     // Clone the new card, and assign values to the elements 
     // in the card
     let newcard = postTemplate.content.cloneNode(true);
-    newcard.querySelector('.post-title').innerHTML = title;
-    newcard.querySelector('.post-summary').innerHTML = summary;
-    newcard.querySelector('.post-owner').innerHTML = owner;
-    newcard.querySelector('.post-timestamp').innerHTML = date;
-    newcard.querySelector('.post-image').src = `./images/${image}.jpg`;
+
+    console.log("title:" + title);
+
+    newcard.querySelector('#post-title').innerHTML = title;
+    newcard.querySelector('#post-summary').innerHTML = summary;
+    newcard.querySelector('#post-owner').innerHTML = owner;
+    newcard.querySelector('#post-timestamp').innerHTML = date;
+    newcard.querySelector('#post-image').src = `./images/${image}.jpg`;
 
     // Determine which function called it, and append newcard to the 
     // placeholder container in the correct html page

@@ -34,16 +34,16 @@ function getNameFromAuth() {
                 .onSnapshot(userDoc => {
                     const jdHTML = document.getElementById("dateJoined-goes-here");
                     const cHTML = document.getElementById("country-goes-here");
-/*                    let jd = userDoc.data().joinDate;                                         // Need to fix
+                    let jd = userDoc.data().joinDate;
                     let c = userDoc.data().country;
-                    if (jdHTML !== null){
+                    if (jdHTML != null){
                         jdHTML.innerHTML = jd;
                     }
 
                     if (cHTML !== null){
                         cHTML.innerHTML = c;
                     }  
-*/ 
+ 
                 })
             //****************************************************************************************************************** */
 

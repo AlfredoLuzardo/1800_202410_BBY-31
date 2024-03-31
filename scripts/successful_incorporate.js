@@ -20,4 +20,3 @@ function savePosts(postID){
 }
 
 savePosts(postID);
-

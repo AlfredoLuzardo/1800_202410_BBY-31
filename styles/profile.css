@@ -3,6 +3,7 @@
     padding: auto;
     margin: 10pt;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas: "profile post post";
     grid-gap: 0.5rem;
 }
@@ -11,7 +12,7 @@
     grid-area: profile;
 }
 
-#posts-go-here {
+#user-posts-go-here {
     grid-area: post;
 }
 
