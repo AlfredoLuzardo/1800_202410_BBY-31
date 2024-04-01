@@ -1,22 +1,22 @@
-var postID = localStorage.getItem("postID");
-var currentUser;
+// var postID = localStorage.getItem("postID");
+// var currentUser;
 
-console.log(postID);
+// console.log(postID);
 
-// Function to save posts to an array.
-function savePosts(postID){
-    firebase.auth().onAuthStateChanged(user => {
-        if (user){
+// // Function to save posts to an array.
+// function savePosts(postID){
+//     firebase.auth().onAuthStateChanged(user => {
+//         if (user){
             
-            currentUser = db.collection("users").doc(user.uid);
-            console.log(user)
-            currentUser.update({
-                totalposts: firebase.firestore.FieldValue.increment(1),
-                myposts: firebase.firestore.FieldValue.arrayUnion(postID)
-            });
+//             currentUser = db.collection("users").doc(user.uid);
+//             console.log(user)
+//             currentUser.update({
+//                 totalposts: firebase.firestore.FieldValue.increment(1),
+//                 myposts: firebase.firestore.FieldValue.arrayUnion(postID)
+//             });
             
-        }
-    })
-}
+//         }
+//     })
+// }
 
-savePosts(postID);
+// savePosts(postID);

@@ -36,3 +36,17 @@ h2 {
     cursor: pointer;
 }
 */
+
+#image-container {
+    border-style:solid;
+    border-color:gray;
+    width: 30%;
+    padding: 0pt;
+    margin-left: 5pt;
+}
+
+#post-image {
+    width: 100%;
+    height: 100%;
+    
+}
