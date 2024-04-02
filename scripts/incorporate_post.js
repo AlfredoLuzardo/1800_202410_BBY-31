@@ -18,6 +18,14 @@ listenFileSelect();
 
 // Need to fix
 function uploadPic(postID) {
+
+
+return postID; // REMOVE THIS LINE ONCE THE FUNCTION IS FIXED
+
+
+/*COMMENTING OUT FOR NOW
+
+
     alert("inside uploadPic " + postID);
     if (!ImageFile) {
         alert("No file selected.");
@@ -37,18 +45,27 @@ function uploadPic(postID) {
                     db.collection("posts").doc(postID).update({
                         "image": url // Save the URL into users collection
                     })
-                        
+                    
                         .then(function () {
                             alert('4. Added pic URL to Firestore.');
-                            savePostId(postID);
+                            return postID;
                         })
                 })
         })
         .catch((error) => {
             alert("error uploading to cloud storage: " + error);
         })
+
+
+*/
+  
+
 }
 
+//=======================================
+// This function creates a new post document in the posts collection with the user entered data,
+// and saves the post ID in the myposts array in the user document of the user who made the post
+//=======================================
 function incorporatePost() {
 
     const date = new Date().toLocaleDateString();
@@ -68,37 +85,44 @@ function incorporatePost() {
                 link: postLink,
                 summary: postSummary,
                 owner: user.displayName,
-                date: date
+                date: date,
             })
+            .then((docRef) => { // Callback function takes a pointer to the post document into parameters
+                var ID = docRef.id;
 
-                .then((docRef) => {
-                    var ID = docRef.id;
-                    console.log(ID);
-                    uploadPic(ID);
-                    window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
-                });
+                // Call the uploadPic function, passing in the ID of the document. 
+                let thePostID = uploadPic(ID)
+                    
+                // Return the value returned from it and pass it into the next callback function
+                return thePostID;
+
+            })
+            .then((postID) => { // Then call the savePostId function once the uploadPic function completes
+                savePostId(postID);
+                window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
+            });
         } else {
             console.log("Error, no user signed in");
         }
     })
-    // disable edit (finish later)
+    // disable edit (ADD EDITING OF POST IF TIME)
 }
 
-function exitButton() {
-    console.log("Exit Clicked");
-    alert("Exit Clicked");
-}
-
-// Function to save posts to an array.
+// This function saves the ID of a post (as a String) to the myposts array in the user document
 function savePostId(postID) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
-            console.log(user)
+
             currentUser.update({
                 totalposts: firebase.firestore.FieldValue.increment(1),
                 myposts: firebase.firestore.FieldValue.arrayUnion(postID)
             });
         }
     })
+}
+
+function exitButton() {
+    window.location.href = "main.html"; // REDIRECTS TO main.html FOR NOW - CHANGE LATER IF TIME
+    console.log("Exit Clicked in incorporate_post.html");
 }

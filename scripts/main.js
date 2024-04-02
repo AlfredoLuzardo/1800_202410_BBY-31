@@ -57,7 +57,22 @@ function getNameFromAuth() {
         }
     });
 }
-getNameFromAuth(); //run the function
+getNameFromAuth();
+
+//---------------------------------------------------
+// This function loads the top posts into main.html
+//---------------------------------------------------
+function getTopPosts() { // RIGHT NOW LOADS ALL OF THE POSTS INTO MAIN
+    // get the from the posts collection (LATER CHANGE to get the top (#) of posts)
+    
+
+    // display each of them in main.html (call the displayPostDynamically() function in displayPosts.js) (2 hours).
+}
+
+
+
+
+
 
 
 // Remove and replace with displayTopPosts() function

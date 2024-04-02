@@ -12,7 +12,7 @@ function loadUserPost() {
 loadUserPost();
 
 
-// Displays the posts itself. No function to pass it to yet.
+// Displays all of the posts in the myposts array in the user document.
 function displayMyPosts() {
     // Save the name of this function as a String to pass into 
     // displayPostDynamically (simple way to allow displayPostDynamically 
@@ -27,16 +27,20 @@ function displayMyPosts() {
             console.log(myposts);
 
             myposts.forEach(thisPostID => {
-                db.collection("posts").doc(thisPostID).get().then(doc => {
+                // Get the id of the post document and pass it into the displayPostDynamically
+                db.collection("posts").doc(thisPostID).get()
+                .then(doc => {
                     // Call displayPostDynamically function in displayPosts.js file,
                     // passing in the current document in the history array
                     displayPostDynamically(doc, functionName);
                 })
             })
         })
+        } else { 
+            console.log("No user is signed in");
+            window.location.href = "login.html";
         }
     });
 }
 
 displayMyPosts();
-

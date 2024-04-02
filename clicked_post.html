@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -49,19 +50,19 @@
     <!-- Article Info Page -->
     <div class="article-container container-fluid">
       <div class="post-header">
-        <span style="width:100%;" class="post-header-contents">
-          <div class="post-title"><span class="post-titletext">&ltPost title here&gt</span></div>
+        <div style="width:100%;" class="post-header-contents">
+          <div id="post-title"><span id="post-titletext">&lt;Post title here&gt;</span></div>
           <!-- <div class="bookmark-add-icon-div"><i class="fa-regular fa-bookmark fa-2xl"></i></div> -->
           <div><button type="button" class="btn btn-secondary" id="add-post-view-button"
             onclick="addPostToHistory()">I'm glad to have read this!</button></div>
-        </span>
+          </div>
       </div>
 
-      <img src="https://dummyimage.com/2500x500/000/fff&text=placeholder+image" class="image-placeholder img-fluid" alt="Selected Article Image" class="card-img-top" alt="...">
+      <img src="https://dummyimage.com/2500x500/000/fff&text=placeholder+image" id="image-placeholder" class="img-fluid card-img-top" alt="Selected Article Image">
       <p></p>
       <div class="article-text-content">
         <p>
-          <span class="post-content-placeholder">
+          <span id="post-content-placeholder">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. 
             Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. 
@@ -76,15 +77,15 @@
           </span>
         </p>
       </div>
-      <div class="row" class="info-div">
+      <div class="row info-div">
         <div class="col-md-auto">
-          <p>Posted by: <span class="user-posted-placeholder">user</span></p>
+          <p>Posted by: <span id="post-owner-placeholder">user</span></p>
         </div>
         <div class="col-md-auto">
-          <p>&#x2022</p>
+          <p>&#x2022;</p>
         </div>
         <div class="col-md-auto">
-          <p>Date: <span class="date-posted-placeholder">March 6, 2024</span></p>
+          <p>Date: <span id="date-posted-placeholder">March 6, 2024</span></p>
         </div>
       </div>
       
@@ -110,7 +111,7 @@
     <script src="./scripts/firebaseAPI_BBY31.js"></script> <!-- allows use of firebase API functions with HTML js code linked to HTML file-->
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/main.js"></script>
-    <script src="./scripts/clicked_article.js"></script> <!--WILL NEED TO ADD THIS FILE TO ADD GENERIC CARD TEMPLATE OF SELECTED ARTICLE INFORMATION-->
+    <script src="./scripts/clicked_post.js"></script> <!-- WILL NEED TO ADD THIS FILE TO ADD GENERIC CARD TEMPLATE OF SELECTED ARTICLE INFORMATION -->
 
 </body>
 

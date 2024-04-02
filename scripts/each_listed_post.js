@@ -40,10 +40,3 @@ function displayHikeInfo() {
 }
 displayHikeInfo();
 */
-
-
-// Go to clicked_post.html page
-function goToArticle() {
-    console.log("Article card was clicked!");
-    window.location.href = 'clicked_post.html';
-}

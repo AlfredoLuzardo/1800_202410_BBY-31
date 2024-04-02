@@ -23,4 +23,4 @@ searchForm.addEventListener("submit", function(event) {
 });
 
 
-// SAVE SERACH TEXT VALUE (MAYBE GET FROM LOCALSTORAGE) AND PASS INTO searched_articles.js)
+// SAVE SEARCH TEXT VALUE (MAYBE GET FROM LOCALSTORAGE) AND PASS INTO searched_articles.js)
