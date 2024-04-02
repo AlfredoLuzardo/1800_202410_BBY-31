@@ -14,7 +14,10 @@ var uiConfig = {
           country: "Canada",                      //optional default profile info    
           totalposts: 0,  
           totalread: 0,
-          joinDate: date                          //optional default profile info
+          joinDate: date,                          //optional default profile info
+          myposts: [], // Array for storing posts created by the user as Strings
+          postviewhistory: [] // Array for storing posts viewed by the user 
+                              // (post is added when the user presses the viewed post button in clicked_article.html)
         }).then(function () {
           console.log("New user added to firestore");
           window.location.assign("main.html");       //re-direct to main.html after signup

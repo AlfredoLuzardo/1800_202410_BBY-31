@@ -15,4 +15,4 @@ loadSearchedArticle();
 */
 
 
-// Create function to serach through firestore posts collection for postname (tags?) AND LOAD THE MATCHING ONES INTO serached_articles.js
+// Create function to search through firestore posts collection for postname (tags?) and display each of the the relevant posts (calling the displayPostDynamically function in displayPosts.js).

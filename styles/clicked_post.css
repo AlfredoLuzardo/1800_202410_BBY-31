@@ -32,6 +32,6 @@
     text-align: left;
 }
 
-.post-title .post-titletext {
+#post-title #post-titletext {
     font-size: 20pt;
 }
