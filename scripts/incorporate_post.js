@@ -78,29 +78,42 @@ function incorporatePost() {
             let postLink = document.getElementById('inputPostLink').value;
             let postSummary = document.getElementById('summaryFormControlTextarea1').value;
 
+            if ("geolocation" in navigator){
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    alert(latitude);
+                    alert(longitude);
 
-            var postsCollection = db.collection('posts');
-            postsCollection.add({
-                title: postTitle,
-                link: postLink,
-                summary: postSummary,
-                owner: user.displayName,
-                date: date,
-            })
-            .then((docRef) => { // Callback function takes a pointer to the post document into parameters
-                var ID = docRef.id;
+                    var postsCollection = db.collection('posts');
 
-                // Call the uploadPic function, passing in the ID of the document. 
-                let thePostID = uploadPic(ID)
-                    
-                // Return the value returned from it and pass it into the next callback function
-                return thePostID;
+                    postsCollection.add({
+                        title: postTitle,
+                        link: postLink,
+                        summary: postSummary,
+                        owner: user.displayName,
+                        date: date,
+                        lat: latitude,
+                        long: longitude,
+                    })
+                    .then((docRef) => { // Callback function takes a pointer to the post document into parameters
+                        var ID = docRef.id;
+        
+                        // Call the uploadPic function, passing in the ID of the document. 
+                        let thePostID = uploadPic(ID)
+                            
+                        // Return the value returned from it and pass it into the next callback function
+                        return thePostID;
+        
+                    })
+                    .then((postID) => { // Then call the savePostId function once the uploadPic function completes
+                        savePostId(postID);
+                        window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
+                    });
 
-            })
-            .then((postID) => { // Then call the savePostId function once the uploadPic function completes
-                savePostId(postID);
-                window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
-            });
+                })
+            }
+           
         } else {
             console.log("Error, no user signed in");
         }

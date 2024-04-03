@@ -32,17 +32,29 @@ function getNameFromAuth() {
             // PUT IN NEW JS FILE
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {
-                    const jdHTML = document.getElementById("dateJoined-goes-here");
-                    const cHTML = document.getElementById("country-goes-here");
-                    let jd = userDoc.data().joinDate;
+                    const dateJoinedHTML = document.getElementById("dateJoined-goes-here");
+                    const countryHTML = document.getElementById("country-goes-here");
+                    const articlesSeenHTML = document.getElementById("articlesSeen-goes-here");
+                    const articlesPostedHTML = document.getElementById("articlesPosted-goes-here");
+                    let dj = userDoc.data().joinDate;
                     let c = userDoc.data().country;
-                    if (jdHTML != null){
-                        jdHTML.innerHTML = jd;
+                    let as = userDoc.data().totalread;
+                    let ap = userDoc.data().totalposts;
+                    if (dateJoinedHTML != null){
+                        dateJoinedHTML.innerHTML = dj;
                     }
 
-                    if (cHTML !== null){
-                        cHTML.innerHTML = c;
+                    if (countryHTML != null){
+                        countryHTML.innerHTML = c;
                     }  
+
+                    if (articlesSeenHTML != null){
+                        articlesSeenHTML.innerHTML = as;
+                    }
+
+                    if (articlesPostedHTML != null){
+                        articlesPostedHTML.innerHTML = ap;
+                    }
  
                 })
             //****************************************************************************************************************** */
@@ -68,11 +80,6 @@ function getTopPosts() { // RIGHT NOW LOADS ALL OF THE POSTS INTO MAIN
 
     // display each of them in main.html (call the displayPostDynamically() function in displayPosts.js) (2 hours).
 }
-
-
-
-
-
 
 function showMap() {
     //------------------------------------------
@@ -101,19 +108,14 @@ function showMap() {
         //---------------------------------
         // Add interactive pins for the hikes
         //---------------------------------
-        addHikePins(map);
-
-        //--------------------------------------
-        // Add interactive pin for the user's location
-        //--------------------------------------
-        addUserPin(map);
+        addPostPins(map);
         
     });
 }
 
 showMap();
 
-function addPostPinsCircle(map) {
+function addPostPins(map) {
 
     // READING information from "posts" collection in Firestore
     db.collection('posts').get().then(allPosts => {
@@ -121,12 +123,12 @@ function addPostPinsCircle(map) {
 
         allPosts.forEach(doc => {
             // Extract coordinates of the place
-            coordinates = [doc.data().lng, doc.data().lat];
+            coordinates = [doc.data().long, doc.data().lat];
             console.log(coordinates);
             // Extract other addition fields that you want etc.
-            event_name = doc.data().name; // Event Name
-            preview = doc.data().details; // Text Preview
-            // img = doc.data().posterurl; // Image
+            event_name = doc.data().title; // Event Name
+            preview = doc.data().summary; // Text Preview
+            img = doc.data().image; // Image
             // url = doc.data().link; // URL
 
             // Push information (properties, geometry) into the features array
@@ -134,7 +136,7 @@ function addPostPinsCircle(map) {
                 'type': 'Feature',
                 'properties': {
                     'description': `<strong>${event_name}</strong><p>${preview}</p> 
-                            <br> <a href="/hike.html?id=${doc.id}" target="_blank" 
+                            <br> <img src=${img}> <br> <a href="/clicked_post.html?id=${doc.id}" target="_blank" 
                             title="Opens in a new window">Read more</a>`
                 },
                 'geometry': {
