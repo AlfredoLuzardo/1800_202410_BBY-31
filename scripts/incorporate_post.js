@@ -82,8 +82,6 @@ function incorporatePost() {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     const latitude = position.coords.latitude;
                     const longitude = position.coords.longitude;
-                    alert(latitude);
-                    alert(longitude);
 
                     var postsCollection = db.collection('posts');
 
@@ -110,10 +108,8 @@ function incorporatePost() {
                         savePostId(postID);
                         window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
                     });
-
                 })
             }
-           
         } else {
             console.log("Error, no user signed in");
         }
