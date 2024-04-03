@@ -1,5 +1,6 @@
 
-// Displays all of the posts in the postviewhistory array in the user document.
+// Displays all of the posts from the postviewhistory array in the user document 
+// to cards in the container in post_history.html.
 function displayPostHistory() {
 
     // Save the name of this function as a String to pass into 
