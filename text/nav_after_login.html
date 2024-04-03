@@ -1,71 +1,88 @@
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="main.html">LinkSphere</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="main.html">Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="incorporate_post.html">Incorporate Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile_page.html">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="post_history.html">Post View History</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">About Us</a>
-          </li>
-        </ul>
-        <!--NEED TO SAVE ALL FORM DATA IN THE EVENTLISTENER FUNCTION IN search_articles.js LATER-->
-        <form id="search-form" class="d-flex mx-auto" role="search">
-          <button id="search-button" class="btn btn-light" type="submit">
-            <span class="material-symbols-outlined">search</span>
+<nav class="navbar navbar-expand-lg bg-body-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main.html">LinkSphere</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="main.html">Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="incorporate_post.html">Incorporate Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile_page.html">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="post_history.html">Post View History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">About Us</a>
+        </li>
+      </ul>
+      <!--NEED TO SAVE ALL FORM DATA IN THE EVENTLISTENER FUNCTION IN search_articles.js LATER-->
+      <form id="search-form" class="d-flex mx-auto" role="search">
+        <button id="search-button" class="btn btn-light" type="submit">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <input id="search-text" class="form-control" type="search" placeholder="Search for topics, events, & keywords"
+          aria-label="Search">
+        <!-- Filter button and dropdown menu -->
+        <div class="dropdown d-flex justify-content-center">
+          <button type="button" id="filter-button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false" data-bs-auto-close="outside">
+            <span class="material-symbols-outlined">filter_list</span>
           </button>
-          <input id="search-text" class="form-control" type="search" placeholder="Search for topics, events, & keywords" aria-label="Search">
-          <!-- Filter button and dropdown menu -->
-          <div class="dropdown d-flex justify-content-center">
-            <button type="button" id="filter-button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-              <span class="material-symbols-outlined">filter_list</span>
-            </button>
-                <ul class="dropdown-menu">
-                  <li><h6 class="dropdown-header">Filter by location</h6></li>
-                  <li>
-                    <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span id="continent-filter-option">Select Continent</span></button>
-                    <!--Continent sub-menu (after continent button is clicked)-->
-                    <ul id="continentListPlaceholder"></ul>
-                  </li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li>
-                    <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span id="country-filter-option">Select Country</span></button>
-                    <!--Country sub-menu (after continent button is clicked)-->
-                    <ul id="countryListPlaceholder"></ul>
-                  </li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li>
-                    <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span id="city-filter-option">Select City</span></button>
-                    <!--City sub-menu (after continent button is clicked)-->
-                    <ul id="cityListPlaceholder"></ul>
-                  </li>
-                  <li>
-                    <!--Reset filters button-->
-                    <button type="button" id="reset-filters-button" class="dropdown-item btn btn-light" onclick="resetFilterPlaceholders()">Reset Filters</button>
-                  </li>
-                </ul>
-          </div>
-        </form>
-        <div class="d-flex">
-          <a class="btn btn-outline-secondary" href="../index.html">Logout</a>
+          <ul class="dropdown-menu">
+            <li>
+              <h6 class="dropdown-header">Filter by location</h6>
+            </li>
+            <li>
+              <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
+                  id="continent-filter-option">Select Continent</span></button>
+              <!--Continent sub-menu (after continent button is clicked)-->
+              <ul id="continentListPlaceholder"></ul>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
+                  id="country-filter-option">Select Country</span></button>
+              <!--Country sub-menu (after continent button is clicked)-->
+              <ul id="countryListPlaceholder"></ul>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
+                  id="city-filter-option">Select City</span></button>
+              <!--City sub-menu (after continent button is clicked)-->
+              <ul id="cityListPlaceholder"></ul>
+            </li>
+            <li>
+              <!--Reset filters button-->
+              <button type="button" id="reset-filters-button" class="dropdown-item btn btn-light"
+                onclick="resetFilterPlaceholders()">Reset Filters</button>
+            </li>
+          </ul>
         </div>
+      </form>
+      <div class="d-flex">
+        <a class="btn btn-outline-secondary" href="../index.html">Logout</a>
       </div>
     </div>
-  </nav>
+
+  </div>
+</nav>
 
 <!--JS file for filter menu functions, and loading in the options for the location menus-->
 <script src="../scripts/location_filter.js"></script>
