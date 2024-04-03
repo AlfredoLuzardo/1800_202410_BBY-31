@@ -136,7 +136,7 @@ function addPostPins(map) {
                 'type': 'Feature',
                 'properties': {
                     'description': `<strong>${event_name}</strong><p>${preview}</p> 
-                            <br> <img src=${img}> <br> <a href="/clicked_post.html?id=${doc.id}" target="_blank" 
+                            <br> <img src=${img}> <br> <a href="/clicked_post.html?postID=${doc.id}" target="_blank" 
                             title="Opens in a new window">Read more</a>`
                 },
                 'geometry': {
