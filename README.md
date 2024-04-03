@@ -1,15 +1,14 @@
 # Project Title
+LinkSphere
 
 ## 1. Project Description
 State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
 This browser based web application to ... 
-Our team BBY-31 (Alfredo Luzardo, Jason Lau, Kristian Santos) is developing a web application to help 
-journalists and geographically isolated people spread awareness on issues that are overshadowed, by giving 
-them the ability to post articles and have them ranked by the population.
+Our team, BBY-31 is developing LinkSphere to help local people and journalists spread awareness on overshadowed issues, by allowing them to make posts with their geolocation onto a world map.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* Hi, my name is Alfredo Luzardo! I am very excited to build this project and make it a reality.
+* Hi, my name is Alfredo Luzardo! I am aspiring to become a software developer and I am really excited to make this project a reality.
 * Hi my name is Kristian Santos, building this project is exciting to me.
 * Jason Lau - I am excited to contribute to this project.
 	

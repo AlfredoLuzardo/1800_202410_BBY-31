@@ -1,4 +1,3 @@
-
 function displayPostInfo() {
     // Get the post document id from the postID query argument in the searchParams 
     // property of the current URL (using .get method)
