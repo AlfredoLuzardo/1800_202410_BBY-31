@@ -1,0 +1,39 @@
+@font-face {
+    font-family: NavFont;
+    src: url("../font/static/manrope-bold.ttf");
+  }
+
+.mapboxgl-popup-close-button {
+    font-size: 15pt;
+}
+
+#anchor-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapboxgl-popup-content strong {
+    
+    font-size:110%;
+}
+
+.mapboxgl-popup-content a {
+    font-family: NavFont;
+    text-decoration: none;
+    color:black;
+    background-color: lightgray;
+    padding: 3pt;
+    transition-duration: 0.2s;
+}
+
+.mapboxgl-popup-content a:hover {
+    background-color:#68c837;
+    color: white;
+}
+
+.mapboxgl-popup-content div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
