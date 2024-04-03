@@ -1,5 +1,7 @@
 
+// Displays all of the posts in the postviewhistory array in the user document.
 function displayPostHistory() {
+
     // Save the name of this function as a String to pass into 
     // displayPostDynamically (simple way to allow displayPostDynamically 
     // function to determine which function called it)
@@ -8,23 +10,28 @@ function displayPostHistory() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             db.collection("users").doc(user.uid).get()
-                .then(userDoc => {
-                    // Get the postsviewhistory array from Firestore
-                    var history = userDoc.data().history;
+        .then(userDoc => {
+            var postViewHistory = userDoc.data().postviewhistory;
 
-                    history.forEach(thisPostID => {
-                        db.collection("posts").doc(thisPostID).get().then(doc => {
-                            // Call displayPostDynamically function in displayPosts.js file,
-                            // passing in the current document in the history array
-                            displayPostDynamically(doc, functionName);
-                        })
-                    })
+            postViewHistory.forEach(thisPostID => {
+                // Get the id of the post document and pass it into the displayPostDynamically
+                db.collection("posts").doc(thisPostID).get()
+                .then(doc => {
+                    // Call displayPostDynamically function in displayPosts.js file,
+                    // passing in the current document in the history array
+                    displayPostDynamically(doc, functionName);
                 })
+            })
+        })
+        } else { 
+            console.log("No user is signed in");
+            window.location.href = "login.html";
         }
     });
 }
+displayPostHistory();
 
-//loadSavedArticle();
+
 
 function removeButton() {
     console.log("Remove Clicked");

@@ -91,6 +91,7 @@ function incorporatePost() {
                         summary: postSummary,
                         owner: user.displayName,
                         date: date,
+                        viewcount: 0,
                         lat: latitude,
                         long: longitude,
                     })

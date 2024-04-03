@@ -58,3 +58,11 @@ footer {
 #submit-button {
     float:right;
 }
+
+#exit-icon {
+    padding: 1.25em;
+}
+
+#exit-icon:hover {
+    cursor: pointer;
+}

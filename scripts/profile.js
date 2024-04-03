@@ -1,15 +1,17 @@
-// USER PROFILE PAGE ()
+// USER PROFILE PAGE
 
-// Loads post placeholder into position. CURRENTLY NOT USED
-function loadUserPost() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            console.log($('.userPostPlaceholder').load('./text/each_user_post.html'));
-        }
-    });
-}
 
-loadUserPost();
+//CURRENTLY NOT USED
+// // Loads post placeholder into position. 
+// function loadUserPost() {
+//     firebase.auth().onAuthStateChanged(function (user) {
+//         if (user) {
+//             console.log($('.userPostPlaceholder').load('./text/each_user_post.html'));
+//         }
+//     });
+// }
+
+//loadUserPost();
 
 
 // Displays all of the posts in the myposts array in the user document.
