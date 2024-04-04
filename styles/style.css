@@ -59,6 +59,11 @@ nav {
   box-shadow: none;
   background-color: white;
   border-color: lightgray;
+  color:black;
+}
+
+#search-text::placeholder {
+  color:gray;
 }
 
 #filter-button::after { 
@@ -93,4 +98,12 @@ nav {
 
 #reset-filters-button {
   font-size: 10pt;
+}
+
+.nav-link {
+  transition-duration: 0.1s;
+}
+
+.nav-link:hover {
+  color: white
 }
