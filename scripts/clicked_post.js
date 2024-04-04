@@ -53,11 +53,14 @@ function displayPostInfo() {
 }
 displayPostInfo();
 
-// This function adds or removes the current post to the postviewhistory array, increments or decrements the value of totalread
-// in the Firestore database (called from onclick event in read post button) by 1, and increments or decrements the viewcount
+// Add an event listener to add or remove the current post to the postviewhistory array, and increment or decrement the value of totalread
+// in the Firestore database (called from onclick event in read post button) by 1, and increment or decrement the viewcount
 // of the post document by 1. Increment occurs when the post does not exist in the viewposthistory array, otherwise, decrement
 // occurs.
-function addOrRemovePostFromHistory() {
+//function addOrRemovePostFromHistory() {
+    document.querySelector("#add-post-to-history-button").addEventListener('click', () => {
+    let removePostMsg = "Remove this post from history";
+    let addPostMsg = "Save this post to history";
 
     // Get the information from the reference to the document (using .get method)
     userDocRef.get().then((userDoc) => {
@@ -83,13 +86,15 @@ function addOrRemovePostFromHistory() {
             })
             .then(function () {
                 alert("Post successfully removed from history");
-
-                document.getElementById("add-post-to-history-button").innerText = "Remove this post from history";
-            })
-            .then(function () {
+                
+                document.getElementById("add-post-to-history-button").innerHTML = removePostMsg;
+            // })
+            // .then(function () {
 
                 // Change the colour of the button by replacing the bootstrap button colour class
-                document.getElementById("add-post-to-history-button").classList.replace('btn-secondary','btn-primary');
+                // document.getElementById("add-post-to-history-button").classList.replace('btn-danger','btn-success');
+                document.querySelector("#add-post-to-history-button").style.backgroundColor = "green";
+                document.querySelector("#add-post-to-history-button").style.color = "white";
             });
         } else {
             // If it doesn't exist, add the post to the postviewhistory array
@@ -115,16 +120,19 @@ function addOrRemovePostFromHistory() {
             })
             .then(function() {
                 alert("Post successfully added to history");
-                document.getElementById("add-post-to-history-button").innerText = "Save this post to history";
-            })
-            .then(function () {
+                document.getElementById("add-post-to-history-button").innerHTML = addPostMsg;
+            // })
+            // .then(function () {
                 
                 // Change the colour of the button by replacing the bootstrap button colour class
-                document.getElementById("add-post-to-history-button").classList.replace('btn-primary', 'btn-secondary');
+                //document.getElementById("add-post-to-history-button").classList.replace('btn-success', 'btn-danger');
+                document.querySelector("#add-post-to-history-button").style.backgroundColor = "red";
+                document.querySelector("#add-post-to-history-button").style.color = "white";
             });
         }
     });
-}
+});
+//}
 
 // This function keeps the add post to history button selected
 // if the page is reloaded
@@ -139,10 +147,14 @@ function keepAddToHistoryButtonSelected() {
         // if in the postviewhistory array includes the id of the post
         // document
         if (postViewHistory && postViewHistory.includes(clickedPostID)) {
-            document.getElementById("add-post-to-history-button").innerText = "Remove this post from history";
+            let removePostMsg = "Remove this post from history";
+            document.getElementById("add-post-to-history-button").innerHTML = removePostMsg;
             
             // Change the colour of the button by replacing the bootstrap button colour class
-            document.getElementById("add-post-to-history-button").classList.replace('btn-primary', 'btn-secondary');
+            // document.getElementById("add-post-to-history-button").classList.replace('btn-success', 'btn-danger');
+
+            document.querySelector("#add-post-to-history-button").style.backgroundColor = "red";
+            document.querySelector("#add-post-to-history-button").style.color = "white";
         }
     });
 }

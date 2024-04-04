@@ -32,50 +32,58 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     rel="stylesheet" />
 
-
-  <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/map.css">
-
   <!-- Other libraries go here -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="./styles/map.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    
 </head>
 
 <body>
   <!-- NavBar goes here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <div id="page-banner" class="page-banner p-5 mb-4 bg-body-secondary rounded-3">
+  <div class="page-banner pt-3 pe-5 pb-5 ps-5 rounded-3" style="background-color: #4ba2d8;">
+    <div class="close-page-banner-button"><p>Close</p><span class="material-symbols-outlined" id="close-icon">close</span></div>
     <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold">Welcome <span id="name-goes-here"></span></h1>
+      <h1 class="display-5 fw-bold">Welcome <span id="name-goes-here"></span>!</h1>
       <!-- ADD A PLACE FOR "POSTS READ" -->
-      <p class="col-md-8 fs-4">Let's explore world events.</p>
+      <p class="col-md-8 fs-4">
+        Let's explore world events.
+        <br>
+        <br>
+        View different areas by clicking and dragging the map.
+      </p>
+      <p class="col-md-8 fs-4">You have viewed <span id="num-posts-read-goes-here"></span> posts</p>
     </div>
   </div>
 
   <!-- Main Body -->
-  <main>
+  <main class="main-wrapper side-panel-open-property">
     <!-- MAPBOX -->
-    <div id='map' style='width: 90%; height: 80%; margin: auto; margin-top: 10pt; margin-bottom: 10pt;'></div>
+    <div id='map' style='width: 100%; height: 100%; margin: auto;'></div>
     <!-- MAPBOX -->
+
+    <!-- SIDE PANEL TO DISPLAY POSTS IN -->
+
+    <button class="side-panel-toggle" type="button">
+      <span class="material-symbols-outlined">news</span><span class="side-panel-toggle-text">Hide top posts</span>
+    </button>
+    
+    <div class="side-panel">
+      <!-- Top Posts Section -->
+      <h4>Top Posts</h4>
+
+      <!-- Top posts container -->
+      <div id="top-posts-go-here"></div>
+
+      <!-- Template placeholder for a post in post_history.html, not displayed -->
+      <template id="top-post-template"></template>
+    </div>
   </main>
-
-  <!-- Top Articles Section -->
-  <!-- <h2>Top Articles</h2> -->
-
-  <!-- Top Articles go here-->
-  <!-- 
-  <div class="topArticlePlaceholder"></div>
-  <div class="topArticlePlaceholder"></div>
-  <div class="topArticlePlaceholder"></div>
-   -->
-
-  <!-- Top posts container -->
-  <!-- <div id="top-posts-go-here"></div> -->
-
-  <!-- Template placeholder for a post in main.html, not displayed -->
-  <!-- <template id="top-post-template"></template> -->
 
   <!-- Footer goes here -->
   <nav id="footerPlaceholder"></nav>

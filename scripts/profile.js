@@ -1,17 +1,43 @@
-// USER PROFILE PAGE
 
+// Displays the info from the user document to the card form in the user profile page profile_page.html
+function displayProfileInfo() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if a user is signed in:
+        if (user) {
+            db.collection("users").doc(user.uid)
+            .onSnapshot(userDoc => {
+                const dateJoinedHTML = document.getElementById("dateJoined-goes-here");
+                const countryHTML = document.getElementById("country-goes-here");
+                const articlesSeenHTML = document.getElementById("articlesSeen-goes-here");
+                const articlesPostedHTML = document.getElementById("articlesPosted-goes-here");
+                let dj = userDoc.data().joinDate;
+                let c = userDoc.data().country;
+                let as = userDoc.data().totalread;
+                let ap = userDoc.data().totalposts;
+                if (dateJoinedHTML != null){
+                    dateJoinedHTML.innerHTML = dj;
+                }
 
-//CURRENTLY NOT USED
-// // Loads post placeholder into position. 
-// function loadUserPost() {
-//     firebase.auth().onAuthStateChanged(function (user) {
-//         if (user) {
-//             console.log($('.userPostPlaceholder').load('./text/each_user_post.html'));
-//         }
-//     });
-// }
+                if (countryHTML != null){
+                    countryHTML.innerHTML = c;
+                }  
 
-//loadUserPost();
+                if (articlesSeenHTML != null){
+                    articlesSeenHTML.innerHTML = as;
+                }
+
+                if (articlesPostedHTML != null){
+                    articlesPostedHTML.innerHTML = ap;
+                }
+            })
+
+        } else {
+            // No user is signed in.
+            console.log("No user is logged in");
+        }
+    });
+}
+displayProfileInfo();
 
 
 // Displays all of the posts in the myposts array in the user document 
@@ -27,7 +53,6 @@ function displayMyPosts() {
             db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             var myposts = userDoc.data().myposts;
-            console.log(myposts);
 
             myposts.forEach(thisPostID => {
                 // Get the id of the post document and pass it into the displayPostDynamically

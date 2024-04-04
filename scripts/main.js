@@ -1,68 +1,30 @@
-//---------------------------------------------------
-// This function loads articles into main.html
-//---------------------------------------------------
-/*
-function loadTopArticles() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            //! Temporary - will need to replace with actual data from firestore later
-            console.log($('.topArticlePlaceholder').load('./text/each_user_post.html')); //! temporarily using each_saved_article, but will not be from saved articles later
-        }
-    });
-}
 
-loadTopArticles();
-*/
-
+// Displays the name of the currently logged-in user, and the number of posts read
 function getNameFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            // Do something for the currently logged-in user here: 
-            console.log(user.uid);
-            console.log(user.displayName);
+            // console.log(user.uid);
+            // console.log(user.displayName);
+
+            // User Name
             nameHTML = document.getElementById("name-goes-here");
             userName = user.displayName;
             if (nameHTML != null) {
                 nameHTML.innerHTML = user.displayName;
             }
 
-            //**************************************************************************************************************************************************************
-            // Get the time that the user joined
-            // PUT IN NEW JS FILE
+            // Number of posts read
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {
-                    const dateJoinedHTML = document.getElementById("dateJoined-goes-here");
-                    const countryHTML = document.getElementById("country-goes-here");
-                    const articlesSeenHTML = document.getElementById("articlesSeen-goes-here");
-                    const articlesPostedHTML = document.getElementById("articlesPosted-goes-here");
-                    let dj = userDoc.data().joinDate;
-                    let c = userDoc.data().country;
-                    let as = userDoc.data().totalread;
-                    let ap = userDoc.data().totalposts;
-                    if (dateJoinedHTML != null){
-                        dateJoinedHTML.innerHTML = dj;
-                    }
+                    const postsReadHTML = document.getElementById("num-posts-read-goes-here");
 
-                    if (countryHTML != null){
-                        countryHTML.innerHTML = c;
-                    }  
+                    let numPostsRead = userDoc.data().totalread;
 
-                    if (articlesSeenHTML != null){
-                        articlesSeenHTML.innerHTML = as;
+                    if (postsReadHTML != null){
+                        postsReadHTML.innerHTML = numPostsRead;
                     }
-
-                    if (articlesPostedHTML != null){
-                        articlesPostedHTML.innerHTML = ap;
-                    }
- 
                 })
-            //****************************************************************************************************************** */
-
-            // GET POST VIEW HISTORY FROM USER COLLECTION - DISPLAY VIEW COUNT
-
-
-
         } else {
             // No user is signed in.
             console.log("No user is logged in");
@@ -74,9 +36,57 @@ getNameFromAuth();
 //---------------------------------------------------
 // This function loads the top posts into main.html
 //---------------------------------------------------
-function getTopPosts() { // RIGHT NOW LOADS ALL OF THE POSTS INTO MAIN
-    // get the from the posts collection (LATER CHANGE to get the top (#) of posts)
-    
+function getTopPosts() {
 
-    // display each of them in main.html (call the displayPostDynamically() function in displayPosts.js) (2 hours).
+    // Save the name of this function as a String to pass into 
+    // displayPostDynamically (simple way to allow displayPostDynamically 
+    // function to determine which function called it)
+    var functionName = "displayTopPosts";
+
+    // ***Later need to change to get the top (#) of posts)***
+
+    // Get all of the posts from the posts collection, and display each of them 
+    // in main.html, by calling the displayPostDynamically() function in displayPosts.js
+    db.collection('posts').get().then((postCollRef) => {
+        postCollRef.forEach((postDocRef) => {
+            console.log(postDocRef.id, " => ", postDocRef.data());
+            
+            // Call displayPostDynamically function in displayPosts.js file,
+            // passing in the current document in the history array
+            displayPostDynamically(postDocRef, functionName);
+
+        });
+    });
 }
+getTopPosts();
+
+
+
+
+// SIDE PANEL FUNCTIONALITY FOR POSTS IN main.html
+// Javascript code adapted from: https://codepen.io/dcode-software/pen/OJxEWWz
+
+// Add click event for the side panel toggle button.
+// When clicked, opens the side panel by removing a class property of the main element in main.html,
+// which was being used as a selector for the display hidden property
+document.querySelector(".side-panel-toggle").addEventListener('click', () => {
+    document.querySelector(".main-wrapper").classList.toggle("side-panel-open-property");
+
+    if (document.querySelector(".main-wrapper").classList.contains("side-panel-open-property")) {
+        let newText = "Hide top posts";
+        document.querySelector(".side-panel-toggle-text").innerHTML = newText;
+    } else {
+        let newText = "Show top posts";
+        document.querySelector(".side-panel-toggle-text").innerHTML = newText;
+    }
+    
+    // Load the map again to account for the change in width
+    showMap();
+});
+
+// Hide the welcome banner when the close button is clicked
+document.querySelector(".close-page-banner-button").addEventListener('click', () => {
+
+    document.querySelector(".page-banner").style.display = "none";
+
+});
