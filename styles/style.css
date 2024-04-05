@@ -9,10 +9,10 @@ nav {
 
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
 
 /*
@@ -55,16 +55,17 @@ nav {
   box-shadow: none;
   background-color: white;
   border-color: lightgray;
-  color:black;
+  color: black;
 }
 
 #search-text::placeholder {
-  color:gray;
+  color: gray;
 }
 
-#filter-button::after { 
-  content: none; 
+#filter-button::after {
+  content: none;
 }
+
 /*
 .location-button::after { 
   display: flex;
@@ -144,8 +145,7 @@ nav {
   flex-grow: 1;
 }
 
-
-  .side-panel-toggle {
+.side-panel-toggle {
   /* width: 2.5em;
   height: 2.5em; */
   flex-shrink: 0;
@@ -170,14 +170,14 @@ nav {
 
 .side-panel {
   /* Default display of the side-panel class element set to none */
-  display: none; 
+  display: none;
 
   padding-top: 0.5em;
   overflow-y: auto;
   width: 800px;
 
   color: white;
-  background-color:rgb(65, 65, 65);
+  background-color: rgb(65, 65, 65);
   /*color: white;
   background-color: rgb(241, 241, 241); */
 
