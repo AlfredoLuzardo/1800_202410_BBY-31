@@ -20,6 +20,10 @@
     height: fit-content;
 }
 
+#name-goes-here {
+    font-size: 20pt;
+  }
+
 @media screen and (max-width: 700px) {
     .main {
         grid-template-columns: 1fr;
