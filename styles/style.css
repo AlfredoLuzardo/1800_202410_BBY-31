@@ -30,7 +30,8 @@ nav {
 */
 
 #search-form {
-  margin: 0;
+  margin-top: 10pt;
+  /* margin: 0; */
   padding: 0;
   width: 350pt;
   height: 30pt;
@@ -205,4 +206,8 @@ nav {
 #close-icon {
   font-size: 30pt;
   /* background-color: #287eb4; */
+}
+
+#logout-button {
+  margin-left: 10pt;
 }

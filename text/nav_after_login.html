@@ -23,63 +23,63 @@
         <li class="nav-item">
           <a class="nav-link" href="aboutus.html">About Us</a>
         </li>
+        <li class="nav-item" class="d-flex" id="logout-button">
+          <a class="btn btn-outline-light" href="../index.html">Logout</a>
+        </li>
       </ul>
       <!--NEED TO SAVE ALL FORM DATA IN THE EVENTLISTENER FUNCTION IN search_articles.js LATER-->
-      <form id="search-form" class="d-flex mx-auto" role="search">
-        <button id="search-button" class="btn btn-light" type="submit">
-          <span class="material-symbols-outlined">search</span>
-        </button>
-        <input id="search-text" class="form-control" type="search" placeholder="Search for topics, events, & keywords"
-          aria-label="Search">
-        <!-- Filter button and dropdown menu -->
-        <div class="dropdown d-flex justify-content-center">
-          <button type="button" id="filter-button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false" data-bs-auto-close="outside">
-            <span class="material-symbols-outlined">filter_list</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <h6 class="dropdown-header">Filter by location</h6>
-            </li>
-            <li>
-              <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
-                  id="continent-filter-option">Select Continent</span></button>
-              <!--Continent sub-menu (after continent button is clicked)-->
-              <ul id="continentListPlaceholder"></ul>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
-              <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
-                  id="country-filter-option">Select Country</span></button>
-              <!--Country sub-menu (after continent button is clicked)-->
-              <ul id="countryListPlaceholder"></ul>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
-              <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
-                  id="city-filter-option">Select City</span></button>
-              <!--City sub-menu (after continent button is clicked)-->
-              <ul id="cityListPlaceholder"></ul>
-            </li>
-            <li>
-              <!--Reset filters button-->
-              <button type="button" id="reset-filters-button" class="dropdown-item btn btn-light"
-                onclick="resetFilterPlaceholders()">Reset Filters</button>
-            </li>
-          </ul>
-        </div>
-      </form>
-      <div class="d-flex">
-        <a class="btn btn-outline-light" href="../index.html">Logout</a>
-      </div>
     </div>
+    <form id="search-form" class="d-flex mx-auto" role="search">
+      <button id="search-button" class="btn btn-light" type="submit">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <input id="search-text" class="form-control" type="search" placeholder="Search for topics, events, & keywords"
+        aria-label="Search">
+      <!-- Filter button and dropdown menu -->
+      <div class="dropdown d-flex justify-content-center">
+        <button type="button" id="filter-button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false" data-bs-auto-close="outside">
+          <span class="material-symbols-outlined">filter_list</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <h6 class="dropdown-header">Filter by location</h6>
+          </li>
+          <li>
+            <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
+                id="continent-filter-option">Select Continent</span></button>
+            <!--Continent sub-menu (after continent button is clicked)-->
+            <ul id="continentListPlaceholder"></ul>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li>
+            <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
+                id="country-filter-option">Select Country</span></button>
+            <!--Country sub-menu (after continent button is clicked)-->
+            <ul id="countryListPlaceholder"></ul>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li>
+            <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
+                id="city-filter-option">Select City</span></button>
+            <!--City sub-menu (after continent button is clicked)-->
+            <ul id="cityListPlaceholder"></ul>
+          </li>
+          <li>
+            <!--Reset filters button-->
+            <button type="button" id="reset-filters-button" class="dropdown-item btn btn-light"
+              onclick="resetFilterPlaceholders()">Reset Filters</button>
+          </li>
+        </ul>
+      </div>
+    </form>
 
   </div>
 </nav>
