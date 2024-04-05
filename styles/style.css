@@ -97,23 +97,19 @@ nav {
   font-size: 10pt;
 }
 
+.page-banner {
+  display: flex;
+  position: relative;
+}
+
 .close-page-banner-button {
   float: right;
   display: flex;
-  width: 6em;
   gap: 0.25em;
   margin: 0;
   padding-top: 0;
-  padding-left: 2em;
   padding-bottom: 0;
-  padding-right: 2em;
   justify-content: center;
-}
-
-.close-page-banner-button p {
-  display: inline;
-  margin: 0;
-  padding: 0;
 }
 
 .close-page-banner-button:hover {
@@ -204,4 +200,9 @@ nav {
 
 .nav-link:hover {
   color: white
+}
+
+#close-icon {
+  font-size: 30pt;
+  /* background-color: #287eb4; */
 }

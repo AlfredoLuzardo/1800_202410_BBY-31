@@ -50,7 +50,6 @@ function addPostPins(map) {
                     console.log(coordinates);
                     // Extract other addition fields that you want etc.
                     title = doc.data().title; // Event Name
-                    summary = doc.data().summary; // Text Preview
                     img = doc.data().image; // Image
                     // url = doc.data().link; // URL
 
@@ -58,7 +57,7 @@ function addPostPins(map) {
                     features.push({
                         'type': 'Feature',
                         'properties': {
-                            'description': `<strong>${title}</strong><p>${summary}</p> 
+                            'description': `<strong>${title}</strong> 
                             <div><img src="https://fakeimg.pl/130x100/cccccc/636363?text=PLACE+HOLDER"></div>
                             <br> <div id="anchor-div"><a href="/clicked_post.html?id=${doc.id}" target="_blank" 
                             title="Opens in a new window">READ MORE</a></div>`
