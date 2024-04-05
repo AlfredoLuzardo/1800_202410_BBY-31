@@ -13,12 +13,15 @@
           <h5 id="title"><span id="post-title">Post Title</span></h5>
         </div>
         <div class="col">
-          <i class="fa-solid fa-x" onclick="removeButton()"></i>
+          <a id="view-post-button" class="btn btn-primary" href="">Read more</a>
         </div>
+        <!-- <div class="col">
+          <i class="fa-solid fa-x" onclick="removeButton()"></i>
+        </div> -->
       </div>
     </div>
     <div class="card-body">
-      <div class="row">
+      <div class="row" id="main-row">
         <div class="col-md-auto" id="image-container">
           <img src="https://dummyimage.com/200x200/000/fff&text=place+holder+image" alt="Article Image"
             id="post-image">
@@ -34,12 +37,9 @@
             </div>
           </div>
           <div class="row"> <!-- needs styling to move to correct position -->
-            <div class="col">
-              <a id="view-post-button" class="btn btn-primary" href="">Read more</a>
-            </div>
           </div>
           <div class="row" id="info-div">
-            <div class="col-md-auto">
+            <div class="col">
               <p>Posted by: <span id="post-owner"></span></p>
             </div>
             <div class="col" id="date">
