@@ -60,22 +60,28 @@ function getTopPosts() {
 }
 getTopPosts();
 
-
-
-
 // SIDE PANEL FUNCTIONALITY FOR POSTS IN main.html
 // Javascript code adapted from: https://codepen.io/dcode-software/pen/OJxEWWz
 
 // Add click event for the side panel toggle button.
 // When clicked, opens the side panel by removing a class property of the main element in main.html,
 // which was being used as a selector for the display hidden property
+
+var size = window.matchMedia("(max-width: 700px)");
+
 document.querySelector(".side-panel-toggle").addEventListener('click', () => {
     document.querySelector(".main-wrapper").classList.toggle("side-panel-open-property");
 
     if (document.querySelector(".main-wrapper").classList.contains("side-panel-open-property")) {
+        if (size.matches){
+            document.getElementById("map").setAttribute("hidden", "hidden");
+        }
         let newText = "Hide top posts";
         document.querySelector(".side-panel-toggle-text").innerHTML = newText;
     } else {
+        if (size.matches) {
+            document.getElementById("map").removeAttribute("hidden");
+        }
         let newText = "Show top posts";
         document.querySelector(".side-panel-toggle-text").innerHTML = newText;
     }
