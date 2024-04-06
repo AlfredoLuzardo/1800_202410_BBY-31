@@ -14,7 +14,7 @@ function displayPostDynamically(currPostRef, funcNameCalledBy) {
     var summary = currPostRef.data().summary;
     var owner = currPostRef.data().owner;
     var date = currPostRef.data().date;
-    // var image = currentPostId.data().image;                                                  UNCOMMENT WHEN uploadImage FUNCTION IS FIXED
+    var image = currPostRef.data().image;                                                 
 
     // Clone the new card, and assign values to the elements 
     // in the card
@@ -24,7 +24,7 @@ function displayPostDynamically(currPostRef, funcNameCalledBy) {
     newcard.querySelector('#post-summary').innerHTML = summary;
     newcard.querySelector('#post-owner').innerHTML = owner;
     newcard.querySelector('#post-timestamp').innerHTML = date;
-    //newcard.querySelector('#post-image').src = `./images/${image}.jpg`;                       UNCOMMENT WHEN uploadImage FUNCTION IS FIXED
+    newcard.querySelector('#post-image').src = image;                       
 
     // Add the id of the post document to the href location of the view post button in each post in the list
     // To go to clicked_post.html page with an appended string at the end of the redirection URL with delimeter

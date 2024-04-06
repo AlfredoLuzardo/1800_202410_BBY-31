@@ -18,48 +18,37 @@ listenFileSelect();
 
 // Need to fix
 function uploadPic(postID) {
-
-
-return postID; // REMOVE THIS LINE ONCE THE FUNCTION IS FIXED
-
-
-/*COMMENTING OUT FOR NOW
-
-
     alert("inside uploadPic " + postID);
     if (!ImageFile) {
         alert("No file selected.");
-    }
-    
-    var storageRef = storage.ref("images/" + postID + ".jpg");
-    alert("STORAGEREF.PUT: " + storageRef.put(ImageFile));
+    } else {
+        var storageRef = storage.ref("images/" + postID + ".jpg");
+        alert("STORAGEREF: " + storageRef);
+        alert("ImageFile: " + ImageFile);
+        var blob = URL.createObjectURL(ImageFile);
+        alert(blob);
 
-    storageRef.put(ImageFile)   //global variable ImageFile
+        storageRef.put(ImageFile)   //global variable ImageFile
+            .then(function () {
+                alert('2. Uploaded to Cloud Storage: ');
+                storageRef.getDownloadURL()
 
-        .then(function () {
-            alert('2. Uploaded to Cloud Storage: ');
-            storageRef.getDownloadURL()
-
-                .then(function (url) { // Get URL of the uploaded file
-                    alert("3. Got the download URL.");
-                    db.collection("posts").doc(postID).update({
-                        "image": url // Save the URL into users collection
-                    })
-                    
-                        .then(function () {
-                            alert('4. Added pic URL to Firestore.');
-                            return postID;
+                    .then(function (url) { // Get URL of the uploaded file
+                        alert("3. Got the download URL.");
+                        db.collection("posts").doc(postID).update({
+                            "image": url // Save the URL into users collection
                         })
-                })
-        })
-        .catch((error) => {
-            alert("error uploading to cloud storage: " + error);
-        })
 
-
-*/
-  
-
+                            .then(function () {
+                                alert('4. Added pic URL to Firestore.');
+                                savePostId(postID);
+                            })
+                    })
+            })
+            .catch((error) => {
+                alert("error uploading to cloud storage: " + error);
+            })
+    }
 }
 
 //=======================================
@@ -78,8 +67,8 @@ function incorporatePost() {
             let postLink = document.getElementById('inputPostLink').value;
             let postSummary = document.getElementById('summaryFormControlTextarea1').value;
 
-            if ("geolocation" in navigator){
-                navigator.geolocation.getCurrentPosition(function(position) {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
                     const latitude = position.coords.latitude;
                     const longitude = position.coords.longitude;
 
@@ -95,26 +84,19 @@ function incorporatePost() {
                         lat: latitude,
                         long: longitude,
                     })
-                    .then((docRef) => { // Callback function takes a pointer to the post document into parameters
-                        var ID = docRef.id;
-        
-                        // Call the uploadPic function, passing in the ID of the document. 
-                        let thePostID = uploadPic(ID)
+                        .then(docRef => { // Callback function takes a pointer to the post document into parameters
+                            var ID = docRef.id;
+                            uploadPic(ID);
+                            savePostId(ID);
+                            window.location.href = "successful_incorporate.html";
                             
-                        // Return the value returned from it and pass it into the next callback function
-                        return thePostID;
-        
-                    })
-                    .then((postID) => { // Then call the savePostId function once the uploadPic function completes
-                        savePostId(postID);
-                        window.location.href = "successful_incorporate.html"; // Redirect to the successful_incorporate page
-                    });
-                })
+                        });
+                });
             }
         } else {
             console.log("Error, no user signed in");
         }
-    })
+    });
     // disable edit (ADD EDITING OF POST IF TIME)
 }
 
@@ -129,7 +111,7 @@ function savePostId(postID) {
                 myposts: firebase.firestore.FieldValue.arrayUnion(postID)
             });
         }
-    })
+    });
 }
 
 function exitButton() {

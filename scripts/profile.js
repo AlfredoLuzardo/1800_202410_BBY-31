@@ -59,6 +59,7 @@ function displayMyPosts() {
             db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             var myposts = userDoc.data().myposts;
+            console.log(myposts);
 
             myposts.forEach(thisPostID => {
                 // Get the id of the post document and pass it into the displayPostDynamically
