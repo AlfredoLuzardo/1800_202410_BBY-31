@@ -87,12 +87,10 @@ function incorporatePost() {
                         .then(docRef => { // Callback function takes a pointer to the post document into parameters
                             var ID = docRef.id;
                             uploadPic(ID);
-                            savePostId(ID);
-                            window.location.href = "successful_incorporate.html";
-                            
-                        });
-                });
+                        })
+                })
             }
+            
         } else {
             console.log("Error, no user signed in");
         }
@@ -109,7 +107,10 @@ function savePostId(postID) {
             currentUser.update({
                 totalposts: firebase.firestore.FieldValue.increment(1),
                 myposts: firebase.firestore.FieldValue.arrayUnion(postID)
-            });
+            })
+                .then(() => {
+                    window.location.href = "successful_incorporate.html";
+                })
         }
     });
 }
