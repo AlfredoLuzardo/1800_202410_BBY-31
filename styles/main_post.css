@@ -8,7 +8,7 @@ i {
 }
 
 #info-div {
-    margin-top: 95pt;
+    margin-top: 25pt;
 }
 
 #date p {
@@ -22,7 +22,6 @@ h2 {
 
 .card {
     width: 100%;
-    margin-bottom: 10pt; /* need to fix */
 }
 
 #post-container {
@@ -31,17 +30,11 @@ h2 {
     align-items: center;
 }
 
-/*
-.post-container:hover {
-    cursor: pointer;
-}
-*/
-
 #image-container {
     border-style:solid;
     border-color:gray;
     width: 30%;
-    height: 200pt;
+    height:100pt;
     padding: 0pt;
     margin-left: 5pt;
 }
@@ -49,7 +42,6 @@ h2 {
 #post-image {
     width: 100%;
     height: 100%;
-    
 }
 
 #view-post-button {
