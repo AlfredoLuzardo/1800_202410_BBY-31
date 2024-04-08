@@ -131,6 +131,13 @@ nav {
   display: none;
 }
 
+.nav-link {
+  transition-duration: 0.1s;
+}
+
+.nav-link:hover {
+  color: white
+}
 
 /* SIDE PANEL FOR POSTS IN main.html*/
 /* CSS code adapted from: https://codepen.io/dcode-software/pen/OJxEWWz*/
@@ -174,7 +181,7 @@ nav {
 
   padding-top: 0.5em;
   overflow-y: auto;
-  width: 800px;
+  width: 900px;
 
   color: white;
   background-color:rgb(65, 65, 65);
@@ -198,10 +205,3 @@ nav {
   background-color: grey;
 }
 
-.nav-link {
-  transition-duration: 0.1s;
-}
-
-.nav-link:hover {
-  color: white
-}

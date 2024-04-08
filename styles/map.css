@@ -24,6 +24,7 @@
     color:black;
     background-color: lightgray;
     padding: 3pt;
+    border-radius: 5px;
     transition-duration: 0.2s;
 }
 
