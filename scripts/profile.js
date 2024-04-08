@@ -10,10 +10,16 @@ function displayProfileInfo() {
                 const countryHTML = document.getElementById("country-goes-here");
                 const articlesSeenHTML = document.getElementById("articlesSeen-goes-here");
                 const articlesPostedHTML = document.getElementById("articlesPosted-goes-here");
+                const nameHTML = document.getElementById("name-goes-here");
                 let dj = userDoc.data().joinDate;
                 let c = userDoc.data().country;
                 let as = userDoc.data().totalread;
                 let ap = userDoc.data().totalposts;
+                let userName = user.displayName;
+
+                if (nameHTML != null) {
+                    nameHTML.innerHTML = userName;
+                }
                 if (dateJoinedHTML != null){
                     dateJoinedHTML.innerHTML = dj;
                 }
@@ -53,6 +59,7 @@ function displayMyPosts() {
             db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             var myposts = userDoc.data().myposts;
+            console.log(myposts);
 
             myposts.forEach(thisPostID => {
                 // Get the id of the post document and pass it into the displayPostDynamically

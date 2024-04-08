@@ -36,35 +36,31 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
 
-    <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/map.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/style.css">
+
 </head>
 
 <body>
+  <!-- NavBar goes here -->
+  <nav id="navbarPlaceholder"></nav>
 
-  <!-- <div id="body-grid-container"> -->
-
-    <!-- grid-nav-item grid-banner-item grid-footer-item -->
-  
-    <!-- NavBar goes here -->
-    <nav id="navbarPlaceholder"></nav>
-
-    <div class="page-banner pt-3 pe-5 pb-5 ps-5 rounded-3" style="background-color: #4ba2d8;">
-      <div class="close-page-banner-button"><p>Close</p><span class="material-symbols-outlined" id="close-icon">close</span></div>
-      <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Welcome <span id="name-goes-here"></span>!</h1>
-        <!-- ADD A PLACE FOR "POSTS READ" -->
-        <p class="col-md-8 fs-4">
-          Let's explore world events.
-          <br>
-          <br>
-          View different areas by clicking and dragging the map.
-        </p>
-        <p class="col-md-8 fs-4">You have viewed <span id="num-posts-read-goes-here"></span> posts</p>
-      </div>
+  <div class="page-banner pt-2 pe-1 ps-1" style="background-color: #56638A; color: white;">
+    <div class="container-fluid py-3">
+      <div class="close-page-banner-button"><span class="material-symbols-outlined" id="close-icon">close</span></div>
+      <h1 class="display-6 fw-bold" id="welcome-phrase">Welcome <span id="name-goes-here"></span>!</h1>
+      <!-- ADD A PLACE FOR "POSTS READ" -->
+      <p class="col fs-5" id="phrase">
+        Let's explore world events. 
+        <br>
+        <b>Posts read: <span id="num-posts-read-goes-here">0</span></b>
+        <br>
+      </p>
+      <p class="col fs-5">View different areas by clicking and dragging the map.</p>
+      
     </div>
+  </div>
 
     <!-- Main Body -->
     <main class="main-wrapper side-panel-open-property">
@@ -92,8 +88,6 @@
 
     <!-- Footer goes here -->
     <nav id="footerPlaceholder"></nav>
-
-  <!-- </div> -->
 
   <!-- JavaScript Functions go here -->
   <script src="./scripts/firebaseAPI_BBY31.js"></script>

@@ -9,10 +9,10 @@ nav {
 
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
 
 /*
@@ -30,7 +30,8 @@ nav {
 */
 
 #search-form {
-  margin: 0;
+  margin-top: 10pt;
+  /* margin: 0; */
   padding: 0;
   width: 350pt;
   height: 30pt;
@@ -55,16 +56,17 @@ nav {
   box-shadow: none;
   background-color: white;
   border-color: lightgray;
-  color:black;
+  color: black;
 }
 
 #search-text::placeholder {
-  color:gray;
+  color: gray;
 }
 
-#filter-button::after { 
-  content: none; 
+#filter-button::after {
+  content: none;
 }
+
 /*
 .location-button::after { 
   display: flex;
@@ -139,69 +141,7 @@ nav {
   color: white
 }
 
-/* SIDE PANEL FOR POSTS IN main.html*/
-/* CSS code adapted from: https://codepen.io/dcode-software/pen/OJxEWWz*/
-
-.main-wrapper {
-  display: flex;
-  height: 100%;
+#logo {
+  width: 5%;
+  margin-right: 5pt;
 }
-
-.main {
-  flex-grow: 1;
-}
-
-
-  .side-panel-toggle {
-  /* width: 2.5em;
-  height: 2.5em; */
-  flex-shrink: 0;
-
-  /* Center the news icon and text */
-  display: grid;
-  grid-template-rows: 2.25em 2.25em;
-  place-items: center;
-
-  color: white;
-  background: rgb(65, 65, 65);
-  border: none;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  cursor: pointer;
-}
-
-.side-panel-toggle:hover {
-  background: black;
-}
-
-
-.side-panel {
-  /* Default display of the side-panel class element set to none */
-  display: none; 
-
-  padding-top: 0.5em;
-  overflow-y: auto;
-  width: 900px;
-
-  color: white;
-  background-color:rgb(65, 65, 65);
-  /*color: white;
-  background-color: rgb(241, 241, 241); */
-
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
-.side-panel-open-property .side-panel {
-  /* When the side-panel-open-property class is added ("activated"),
-   Restore display property of the .side-panel class - "opens" the side panel */
-  display: initial;
-}
-
-.side-panel h4 {
-  text-align: center;
-}
-
-.main-wrapper {
-  background-color: grey;
-}
-

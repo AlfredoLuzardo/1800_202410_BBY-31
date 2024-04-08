@@ -50,3 +50,7 @@ h2 {
     height: 100%;
     
 }
+
+#view-post-button {
+    float: right;
+}

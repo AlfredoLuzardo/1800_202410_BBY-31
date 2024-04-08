@@ -1,23 +1,21 @@
-i {
-    float: right;
-}
+@font-face {
+    font-family: NavFont;
+    src: url("../font/static/manrope-bold.ttf");
+  }
 
-#exit-icon {
+/* i {
+    float: right;
+} */
+
+/* #exit-icon {
     position: relative;
     left: 15pt;
     margin: auto;
-}
+} */
 
 #incorporate-post-main {
     margin-top: 10pt;
-    margin-bottom: 20pt;
-}
-
-.container {
-    position: relative;
-    left:-15pt;
-    width: 70%;
-    margin-bottom:25pt;
+    margin-bottom: 10pt;
 }
 
 footer {
@@ -43,16 +41,32 @@ footer {
 #submit-div {
     position: relative;
     margin-top: 10pt;
+    margin-bottom: 10pt;
 }
 
 #info-section {
+    Font-Family: NavFont;
     position: relative;
-    left: 20pt;
+    /* left: 20pt; */
     padding: 20pt;
     border-style: solid;
-    border-color: lightgrey;
+    border-color: #c4c4c4;
     border-width: 5pt;
-    border-radius: 10px;
+    border-radius: 0px;
+    background-color: white;
+}
+
+
+#inputPostTitle::placeholder {
+    color: #9b9b9b;
+}
+
+#inputPostLink::placeholder {
+    color: #9b9b9b;
+}
+
+#summaryFormControlTextarea1::placeholder {
+    color: #9b9b9b;
 }
 
 #submit-button {
@@ -65,4 +79,19 @@ footer {
 
 #exit-icon:hover {
     cursor: pointer;
+}
+
+body {
+    background-color: white;
+}
+
+h2 {
+    font-family: NavFont;
+    color: #4a4d4f;
+    text-align: center;
+}
+
+label {
+    color: #4a4d4f;
+    margin-bottom: 2pt;
 }
