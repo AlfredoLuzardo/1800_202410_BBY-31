@@ -3,6 +3,14 @@
     src: url("../font/static/manrope-bold.ttf");
 }
 
+#image-popup {
+    margin-top: 2pt;
+    margin-bottom: 5pt;
+    border-style: solid;
+    border-color: rgb(64, 64, 64);
+    width:100pt;
+}
+
 .mapboxgl-popup-close-button {
     font-size: 15pt;
 }
@@ -14,7 +22,6 @@
 }
 
 .mapboxgl-popup-content strong {
-
     font-size: 110%;
 }
 
@@ -24,11 +31,13 @@
     color: black;
     background-color: lightgray;
     padding: 3pt;
+    border-radius: 5px;
+    margin-bottom: 1pt;
     transition-duration: 0.2s;
 }
 
 .mapboxgl-popup-content a:hover {
-    background-color: #68c837;
+    background-color:cornflowerblue;
     color: white;
 }
 
