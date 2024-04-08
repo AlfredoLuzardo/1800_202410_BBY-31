@@ -5,8 +5,9 @@
 
 // Get the post document id from the postID query argument in the searchParams 
 // property of the current URL (using .get method)
+var clickedPostID;
 var currentURL = new URL( window.location.href ); //get URL of the search bar
-var clickedPostID = currentURL.searchParams.get("postID"); //get value for the key "postID"
+clickedPostID = currentURL.searchParams.get("postID"); //get value for the key "postID"
 
 // Get a reference to the user document
 var userDocRef;
@@ -25,27 +26,21 @@ firebase.auth().onAuthStateChanged( user => {
 // This function displays the components of each post, by taking the field values form data stores
 // and modifying their corresponding card elements in the post container in clicked_post.html
 function displayPostInfo() {
-    
     // Get a reference to the post document of the clicked post
     db.collection("posts").doc(clickedPostID).get()
         .then((postDocRef) => {
             // Get the title, image, summary, post owner, and date fields from the post document
             let title = postDocRef.data().title;
-            var summary = postDocRef.data().summary;
-            var owner = postDocRef.data().owner;
-            var date = postDocRef.data().date;
-
-            // WILL ADD IMAGE ONCE FUNCTION IS FIXED
-            // let image = currentPostId.data().image;
-
-            // Example code from tech tip
-            //let imgEvent = document.querySelector( ".hike-img" );
-            //imgEvent.src = "../images/" + hikeCode + ".jpg";
+            let image = postDocRef.data().image;
+            let summary = postDocRef.data().summary;
+            let owner = postDocRef.data().owner;
+            let date = postDocRef.data().date;
 
             // (ADD COMMENTS IF TIME)
 
             // Populate the title, image, summary, post owner, and date placeholders in clicked_post.html
             document.getElementById("post-titletext").innerHTML = title;
+            document.getElementById('image-placeholder').src = image;
             document.getElementById("post-content-placeholder").innerHTML = summary;
             document.getElementById("post-owner-placeholder").innerHTML = owner;
             document.getElementById("date-posted-placeholder").innerHTML = date;

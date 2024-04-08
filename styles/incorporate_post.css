@@ -38,12 +38,6 @@ footer {
     left:10pt;
 }
 
-#submit-div {
-    position: relative;
-    margin-top: 10pt;
-    margin-bottom: 10pt;
-}
-
 #info-section {
     Font-Family: NavFont;
     position: relative;
@@ -69,8 +63,12 @@ footer {
     color: #9b9b9b;
 }
 
-#submit-button {
-    float:right;
+#confirmation-div {
+    display: flex;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    justify-content: flex-end;
+    column-gap: 0.5em;
 }
 
 #exit-icon {
