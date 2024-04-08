@@ -59,7 +59,7 @@ function addPostPins(map) {
                         'properties': {
                             'description': `<strong>${title}</strong> 
                             <div><img src=${img} id="image-popup"></div>
-                            <div id="anchor-div"><a href="/clicked_post.html?id=${doc.id}" target="_blank" 
+                            <div id="anchor-div"><a href="/clicked_post.html?postID=${doc.id}" target="_blank" 
                             title="Opens in a new window">READ MORE</a></div>
                             <div>${date}</div?`
                         },

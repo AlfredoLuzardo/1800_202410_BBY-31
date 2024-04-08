@@ -48,7 +48,7 @@
 
     <div class="row" id="incorporate-post-main">
       <div class="col" id="incorporate-post-title">
-        <h2>INCORPORATE POST</h2>
+        <h2>Incorporate a Post</h2>
       </div>
     </div>
 
@@ -58,7 +58,7 @@
         <div class="col">
           <form>
             <div class="form-group">
-              <label for="inputPostTitle">TITLE</label>
+              <label for="inputPostTitle">Title</label>
               <input type="text" class="form-control" id="inputPostTitle" placeholder="'E.g. Crane Incident'" maxlength="50">
             </div>
           </form>
@@ -69,7 +69,7 @@
         <div class="col">
           <form>
             <div class="form-group">
-              <label for="inputPostLink">LINK FOR EXTERNAL ARTICLE</label>
+              <label for="inputPostLink">Link for external article</label>
               <input type="url" class="form-control" id="inputPostLink"
                 placeholder="'https://www.example.com/page'">
             </div>
@@ -79,7 +79,7 @@
 
       <div class="row">
         <div class="col">
-          <label for="inputPostLink">IMAGE</label>
+          <label for="inputPostLink">Image</label>
           <form>
             <div class="container py-1" id="image-container">
               <img id="image-goes-here" width=100 height=100 />
@@ -93,24 +93,30 @@
         <div class="col">
           <form>
             <div class="form-group">
-              <label for="summaryFormControlTextarea1">SUMMARY</label>
+              <label for="summaryFormControlTextarea1">Summary</label>
               <textarea class="form-control" id="summaryFormControlTextarea1" rows="3"
                 placeholder="'British Columbia's workplace safety agency is meeting with employers and the union that represents crane operators following another crane incident at a construction site in Metro Vancouver.'"></textarea>
             </div>
           </form>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col" id="submit-div">
-        <button type="button" class="btn btn-primary" id="submit-button" onclick="incorporatePost()">Submit</button>
+      <div class="row">
+        <div id="confirmation-div">
+          <button type="button" class="btn btn-secondary btn-lg" id="submit-button" onclick="window.location.href='main.html'">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-lg" id="cancel-button" style="background-color: #2047b9; border-color: #2047b9; color: white;" onclick="incorporatePost()">
+            Submit
+          </button>
+        </div>
       </div>
+      
     </div>
   </div>
 
   <!-- FOOTER -->
-  <nav id="footerPlaceholder"></nav>
+  <nav id="stickyFooterPlaceholder"></nav>
 
   <!-- JavaScript Functions go here -->
   <script src="./scripts/firebaseAPI_BBY31.js"></script>

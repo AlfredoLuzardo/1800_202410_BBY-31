@@ -3,13 +3,27 @@
     padding: auto;
     margin: 10pt;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "profile post post";
+    grid-template-rows: 5% 1fr;
+    grid-template-areas: "profile title title"
+                         "profile post post";
     grid-gap: 0.5rem;
 }
 
 #profile {
     grid-area: profile;
+}
+
+#post-list-header {
+    grid-area: title;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#post-list-header h2 {
+    display: inline;
+    margin: 0;
+    padding: 0;
 }
 
 #user-posts-go-here {
