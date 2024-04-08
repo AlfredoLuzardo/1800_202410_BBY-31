@@ -18,29 +18,29 @@ listenFileSelect();
 
 // Need to fix
 function uploadPic(postID) {
-    alert("inside uploadPic " + postID);
+    console.log("inside uploadPic " + postID);
     if (!ImageFile) {
         alert("No file selected.");
     } else {
         var storageRef = storage.ref("images/" + postID + ".jpg");
-        alert("STORAGEREF: " + storageRef);
-        alert("ImageFile: " + ImageFile);
+        console.log("STORAGEREF: " + storageRef);
+        console.log("ImageFile: " + ImageFile);
         var blob = URL.createObjectURL(ImageFile);
-        alert(blob);
+        console.log(blob);
 
         storageRef.put(ImageFile)   //global variable ImageFile
             .then(function () {
-                alert('2. Uploaded to Cloud Storage: ');
+                console.log('2. Uploaded to Cloud Storage: ');
                 storageRef.getDownloadURL()
 
                     .then(function (url) { // Get URL of the uploaded file
-                        alert("3. Got the download URL.");
+                        console.log("3. Got the download URL.");
                         db.collection("posts").doc(postID).update({
                             "image": url // Save the URL into users collection
                         })
 
                             .then(function () {
-                                alert('4. Added pic URL to Firestore.');
+                                console.log('4. Added pic URL to Firestore.');
                                 savePostId(postID);
                             })
                     })
