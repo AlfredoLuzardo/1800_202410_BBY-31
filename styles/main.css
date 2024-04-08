@@ -3,12 +3,18 @@
     src: url("../font/static/manrope-bold.ttf");
 }
 
+#map {
+    height: 100%;
+    margin: auto;
+}
+
 #image-popup {
     margin-top: 2pt;
     margin-bottom: 5pt;
     border-style: solid;
     border-color: rgb(64, 64, 64);
     width:100pt;
+    height: 100pt;
 }
 
 .mapboxgl-popup-close-button {
@@ -37,7 +43,7 @@
 }
 
 .mapboxgl-popup-content a:hover {
-    background-color:cornflowerblue;
+    background-color:#2047b9;
     color: white;
 }
 
@@ -87,8 +93,9 @@
 /* CSS code adapted from: https://codepen.io/dcode-software/pen/OJxEWWz*/
 
 .main-wrapper {
+    background-color: grey;
     display: flex;
-    height: 100%;
+    height: 78.4%;
 }
 
 .main {
@@ -142,33 +149,31 @@
     text-align: center;
 }
 
-.main-wrapper {
-    background-color: grey;
-}
-
 /* End of side panel */
 
 @media screen and (max-width: 700px) {
+
+    #map {
+        height: 80%;
+        margin: 0;
+    }
+
     .main-wrapper {
-        display: inline;
+        display: flex;
+        flex-direction: column; /* Ensure it's a column layout for stacking */
+        height: 72%;
     }
 
     .side-panel-toggle {
         width: 100%;
-        height: 10%;
+        height: 20%;
     }
 
     .side-panel {
-        position: absolute;
-        /* or position: absolute; */
-        /* Position the sidebar at the bottom */
-
+        position: relative;
         width: 100%;
-        height: 100%;
-
-
-        /* width: 100%;
-        height: 90%; */
+        /* height: 100%; */
+        height: 90%;
     }
 
     .side-panel-open-property .side-panel {

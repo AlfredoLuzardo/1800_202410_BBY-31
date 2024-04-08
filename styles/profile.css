@@ -34,6 +34,7 @@
     }
 
     #profile-main {grid-area: profile;}
+
     #user-posts-go-here {grid-area: posts;}
 
     #user-posts-go-here .card {
@@ -42,6 +43,10 @@
 
     #main-row {
         width: 100%;
+    }
+
+    #image-container {
+        height: 100pt;
     }
 
 }
