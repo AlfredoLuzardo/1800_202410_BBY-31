@@ -98,8 +98,47 @@ nav {
   font-size: 10pt;
 }
 
-#logout-button {
-  margin-left: 10pt;
+.close-page-banner-button {
+  float: right;
+  display: flex;
+  width: 6em;
+  gap: 0.25em;
+  margin: 0;
+  padding-top: 0;
+  padding-left: 2em;
+  padding-bottom: 0;
+  padding-right: 2em;
+  justify-content: center;
+}
+
+.close-page-banner-button p {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.close-page-banner-button:hover {
+  cursor: pointer;
+}
+
+.close-page-banner-button p:hover {
+  cursor: pointer;
+}
+
+.close-page-banner-button #close-icon:hover {
+  cursor: pointer;
+}
+
+.page-banner-closed-property {
+  display: none;
+}
+
+.nav-link {
+  transition-duration: 0.1s;
+}
+
+.nav-link:hover {
+  color: white
 }
 
 #logo {

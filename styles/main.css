@@ -3,14 +3,6 @@
     src: url("../font/static/manrope-bold.ttf");
 }
 
-#image-popup {
-    margin-top: 2pt;
-    margin-bottom: 5pt;
-    border-style: solid;
-    border-color: rgb(64, 64, 64);
-    width:100pt;
-}
-
 .mapboxgl-popup-close-button {
     font-size: 15pt;
 }
@@ -22,6 +14,7 @@
 }
 
 .mapboxgl-popup-content strong {
+
     font-size: 110%;
 }
 
@@ -32,12 +25,11 @@
     background-color: lightgray;
     padding: 3pt;
     border-radius: 5px;
-    margin-bottom: 1pt;
     transition-duration: 0.2s;
 }
 
 .mapboxgl-popup-content a:hover {
-    background-color:cornflowerblue;
+    background-color: #68c837;
     color: white;
 }
 
@@ -76,6 +68,11 @@
 
 .page-banner-closed-property {
     display: none;
+}
+
+#close-icon {
+    font-size: 30pt;
+    /* background-color: #287eb4; */
 }
 
 /* SIDE PANEL FOR POSTS IN main.html*/
@@ -141,18 +138,7 @@
     background-color: grey;
 }
 
-.nav-link {
-    transition-duration: 0.1s;
-}
-
-.nav-link:hover {
-    color: white
-}
-
-#close-icon {
-    font-size: 30pt;
-    /* background-color: #287eb4; */
-}
+/* End of side panel */
 
 @media screen and (max-width: 700px) {
     .main-wrapper {

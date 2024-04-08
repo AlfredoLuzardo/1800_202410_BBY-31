@@ -37,7 +37,7 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
 
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/map.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/style.css">
 
 </head>
@@ -62,39 +62,39 @@
     </div>
   </div>
 
-  <!-- Main Body -->
-  <main class="main-wrapper side-panel-open-property">
-    <!-- MAPBOX -->
-    <div id='map' style='width: 100%; height: 100%; margin: auto;'></div>
-    <!-- MAPBOX -->
+    <!-- Main Body -->
+    <main class="main-wrapper side-panel-open-property">
+      <!-- MAPBOX -->
+      <div id='map' style='width: 100%; height: 100%; margin: auto;'></div>
+      <!-- MAPBOX -->
 
-    <!-- SIDE PANEL TO DISPLAY POSTS IN -->
+      <!-- SIDE PANEL TO DISPLAY POSTS IN -->
 
-    <button class="side-panel-toggle" type="button">
-      <span class="material-symbols-outlined">news</span><span class="side-panel-toggle-text">Hide top posts</span>
-    </button>
+      <button class="side-panel-toggle" type="button">
+        <span class="material-symbols-outlined">news</span><span class="side-panel-toggle-text">Hide top posts</span>
+      </button>
+      
+      <div class="side-panel">
+        <!-- Top Posts Section -->
+        <h4>Top Posts</h4>
 
-    <div class="side-panel">
-      <!-- Top Posts Section -->
-      <h4>Top Posts</h4>
+        <!-- Top posts container -->
+        <div id="top-posts-go-here"></div>
 
-      <!-- Top posts container -->
-      <div id="top-posts-go-here"></div>
+        <!-- Template placeholder for a post in post_history.html, not displayed -->
+        <template id="top-post-template"></template>
+      </div>
+    </main>
 
-      <!-- Template placeholder for a post in post_history.html, not displayed -->
-      <template id="top-post-template"></template>
-    </div>
-  </main>
-
-  <!-- Footer goes here -->
-  <nav id="footerPlaceholder"></nav>
+    <!-- Footer goes here -->
+    <nav id="footerPlaceholder"></nav>
 
   <!-- JavaScript Functions go here -->
   <script src="./scripts/firebaseAPI_BBY31.js"></script>
   <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/map.js"></script>
   <script src="./scripts/displayPosts.js"></script>
   <script src="./scripts/main.js"></script>
-  <script src="./scripts/map.js"></script>
 
 </body>
 
