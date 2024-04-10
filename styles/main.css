@@ -151,7 +151,7 @@
 
 /* End of side panel */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 743px) {
 
     #map {
         height: 80%;
@@ -177,7 +177,7 @@
     }
 
     .side-panel-open-property .side-panel {
-        display: block; /* Show the sidebar when the class is present */
+        display: initial; /* Show the sidebar when the class is present */
       }
 
 }
