@@ -1,6 +1,6 @@
 @font-face {
     font-family: NavFont;
-    src: url("../font/static/manrope-bold.ttf");
+    src: url("../font/manrope.ttf");
   }
 
 /* i {
@@ -48,6 +48,7 @@ footer {
     border-width: 5pt;
     border-radius: 0px;
     background-color: white;
+    margin-bottom: 10pt;
 }
 
 
