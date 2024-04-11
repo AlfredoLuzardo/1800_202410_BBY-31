@@ -8,6 +8,10 @@
     margin: auto;
 }
 
+#viewcount {
+    position: relative;
+}
+
 #image-popup {
     margin-top: 2pt;
     margin-bottom: 5pt;

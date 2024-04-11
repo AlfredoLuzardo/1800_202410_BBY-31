@@ -52,6 +52,7 @@ function addPostPins(map) {
                     title = doc.data().title; // Event Name
                     img = doc.data().image; // Image
                     date = doc.data().date; // date
+                    viewcount = doc.data().viewcount;
 
                     // Push information (properties, geometry) into the features array
                     features.push({
@@ -61,7 +62,8 @@ function addPostPins(map) {
                             <div><img src=${img} id="image-popup"></div>
                             <div id="anchor-div"><a href="/clicked_post.html?postID=${doc.id}" target="_blank" 
                             title="Opens in a new window">READ MORE</a></div>
-                            <div>${date}</div?`
+                            <div>${date}</div>
+                            <div id="viewcount">Views: ${viewcount}</div>`
                         },
                         'geometry': {
                             'type': 'Point',
