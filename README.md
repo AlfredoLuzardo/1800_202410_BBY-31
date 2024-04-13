@@ -7,7 +7,7 @@ Our team, BBY-31 is developing LinkSphere to help local people and journalists s
 ## 2. Names of Contributors  
 * Hi, my name is Alfredo Luzardo! I am aspiring to become a software developer and I am really excited to make this project a reality.
 * Hi my name is Kristian Santos, building this project is exciting to me.
-* Jason Lau - I am excited to contribute to this project.
+* Hi my name is Jason Lau! I am excited to contribute to this project and collaborate as a team.
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
@@ -17,11 +17,10 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * MapBox 2.7.0
 * Manrope font
 * Logo made by LinkSphere! 
-* Google Material Symbols Outlined
+* Google Material Icons and Symbols Outlined
+* Fontawesome icons
 
 ## 4. Complete setup/installion/usage
-State what a user needs to do when they come to your project.  How do others start using your code or application?
-Here are the steps ...
 * To use our application, a user needs to create an account when they first open the website.
 * Then, a user can view and read all of the posts created by users on the map and in the side panel. 
 * If a user wants to create a post, they can go to the incorporate post page to create one. 
@@ -42,7 +41,7 @@ Here are some known bugs:
 
 ## 6. Features for Future
 What we'd like to build in the future:
-* We want to complete the search bar and filter functionality. We think this would allow for greater user experience and effeciency.
+* We want to complete the search bar and filter functionality. We think this would allow for greater user experience and efficiency.
 * We want to include a comments section for each post so that users can discuss about the topic. 
 * We want to allow users to visit other profiles and search for other profiles. 
 	
@@ -66,7 +65,6 @@ Content of the project folder:
 ├── post_history.html        # The post history page, where users can view which posts they have read
 ├── profile_page.html        # The profile page that holds all the info about the user
 ├── README.md                # The file you are reading now!
-├── searched_articles.html   #
 ├── storage.rules            # Holds the rules for reading and writing to firebase storage
 └── successful_incorporate.html # The confirmation page a user is taken to after creating a post
 
@@ -84,7 +82,6 @@ It has the following subfolders and files:
         /authentication.js       # Script for user authentication and login
         /clicked_post.js         # Script for viewing an individual post
         /displayPosts.js         # Script for displaying posts on a page
-        /edit_post.js            #
         /firebaseAPI_BBY31.js    # Script for firebase configurations
         /incorporate_post.js     # Script for creating a post
         /location_filter.js      # Script for the filter option in search bar
@@ -92,9 +89,8 @@ It has the following subfolders and files:
         /map.js                  # Script for the MapBox map API
         /post_history.js         # Script for displaying post history
         /profile.js              # Script for displaying profile information
-        /script.js               # Script for the logout function
+        /logout.js               # Script for the logout function
         /search_bar.js           # Script for the search bar
-        /searched_articles.js    # 
         /skeleton.js             # Script for loading all the placeholders, such as navbars, footers etc
 ├── styles                   # Folder for styles
         /aboutus.css             # Styling for the about us page
@@ -115,8 +111,4 @@ It has the following subfolders and files:
         /nav_before_login.html   # Includes the HTML structure for the navbar before the user has logged in
         /sticky_footer.html      # Includes the Bootstrap structure for the sticky footer
 
-
-
 ```
-
-

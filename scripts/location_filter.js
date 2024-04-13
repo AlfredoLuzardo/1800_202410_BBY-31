@@ -1,7 +1,7 @@
-//---------------------------------------------------
+//----------------------------------------------------------
 // This function loads the filter options menus for 
 // continent, country, and city into navbar_after_login.html
-//---------------------------------------------------
+//----------------------------------------------------------
 function loadLocationOptions() {
     console.log($('#continentListPlaceholder').load('./text/continent_list.html'));
     console.log($('#countryListPlaceholder').load('./text/country_list.html'));

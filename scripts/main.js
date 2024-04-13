@@ -1,5 +1,7 @@
 
+//--------------------------------------------------------------------------------
 // Displays the name of the currently logged-in user, and the number of posts read
+//--------------------------------------------------------------------------------
 function getNameFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -10,6 +12,7 @@ function getNameFromAuth() {
             // User Name
             nameHTML = document.getElementById("name-goes-here");
             userName = user.displayName;
+            
             if (nameHTML != null) {
                 nameHTML.innerHTML = user.displayName;
             }
@@ -18,7 +21,6 @@ function getNameFromAuth() {
             db.collection("users").doc(user.uid)
                 .onSnapshot(userDoc => {
                     const postsReadHTML = document.getElementById("num-posts-read-goes-here");
-
                     let numPostsRead = userDoc.data().totalread;
 
                     if (postsReadHTML != null){
@@ -42,8 +44,8 @@ function getTopPosts() {
     // displayPostDynamically (simple way to allow displayPostDynamically 
     // function to determine which function called it)
     var functionName = "displayTopPosts";
-
-    // ***Later need to change to get the top (#) of posts)***
+    
+    // Ran out of time to make this function get the top (#) of posts), so lef
 
     // Get all of the posts from the posts collection, and display each of them 
     // in main.html, by calling the displayPostDynamically() function in displayPosts.js
@@ -60,25 +62,30 @@ function getTopPosts() {
 }
 getTopPosts();
 
+//-------------------------------------------------------------------------------------------------
 // SIDE PANEL FUNCTIONALITY FOR POSTS IN main.html
 // Javascript code adapted from: https://codepen.io/dcode-software/pen/OJxEWWz
-
+//
 // Add click event for the side panel toggle button.
 // When clicked, opens the side panel by removing a class property of the main element in main.html,
 // which was being used as a selector for the display hidden property
+//-------------------------------------------------------------------------------------------------
 
+// Variable that is set to the size of the mobile display media query
 var size = window.matchMedia("(max-width: 700px)");
 
 document.querySelector(".side-panel-toggle").addEventListener('click', () => {
     document.querySelector(".main-wrapper").classList.toggle("side-panel-open-property");
 
     if (document.querySelector(".main-wrapper").classList.contains("side-panel-open-property")) {
+        // Checks whether the size matches, and if it does hides the map.
         if (size.matches){
             document.getElementById("map").setAttribute("hidden", "hidden");
         }
         let newText = "Hide top posts";
         document.querySelector(".side-panel-toggle-text").innerHTML = newText;
     } else {
+        // Checks whether the size matches, and if it does shows the map.
         if (size.matches) {
             document.getElementById("map").removeAttribute("hidden");
         }
@@ -90,7 +97,9 @@ document.querySelector(".side-panel-toggle").addEventListener('click', () => {
     showMap();
 });
 
+//-----------------------------------------------------------------------------------
 // Hide the welcome banner when the close button is clicked
+//-----------------------------------------------------------------------------------
 document.querySelector(".close-page-banner-button").addEventListener('click', () => {
 
     document.querySelector(".page-banner").style.display = "none";

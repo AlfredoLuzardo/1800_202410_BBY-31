@@ -1,17 +1,9 @@
+/* STYLING FOR INCORPORATE POST PAGE */
+
 @font-face {
     font-family: NavFont;
     src: url("../font/manrope.ttf");
   }
-
-/* i {
-    float: right;
-} */
-
-/* #exit-icon {
-    position: relative;
-    left: 15pt;
-    margin: auto;
-} */
 
 #incorporate-post-main {
     margin-top: 10pt;

@@ -1,3 +1,5 @@
+/* STYLING FOR NAVBAR */
+
 @font-face {
   font-family: NavFont;
   src: url("../font/manrope.ttf");
@@ -15,23 +17,8 @@ nav {
     'opsz' 48
 }
 
-/*
-.filter-button {
-  position: relative;
-  right: 12pt;
-  height: 10pt;
-}
-*/
-/*
-.filter {
-  text-decoration: none;
-  color: black;
-}
-*/
-
 #search-form {
   margin-top: 10pt;
-  /* margin: 0; */
   padding: 0;
   width: 350pt;
   height: 30pt;
@@ -66,13 +53,6 @@ nav {
 #filter-button::after {
   content: none;
 }
-
-/*
-.location-button::after { 
-  display: flex;
-  justify-content: flex-end;
-}
-*/
 
 #filter-button {
   border-radius: 0px 10px 10px 0px;

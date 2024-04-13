@@ -1,10 +1,10 @@
+//------------------------------------------------------
+// Function that initializes and displays the MapBox map
+//------------------------------------------------------
 function showMap() {
     //------------------------------------------
     // Defines and initiates basic mapbox data
     //------------------------------------------
-    // TO MAKE THE MAP APPEAR YOU MUST
-    // ADD YOUR ACCESS TOKEN FROM
-    // https://account.mapbox.com
     mapboxgl.accessToken = 'pk.eyJ1IjoibHV6YXJkb25ldG8yMDA1IiwiYSI6ImNsdWJodXlpNjB3dGQybG1uMjZ2YXl0eDgifQ.A2VnAh7CYilLWyuA-fXzlQ';
     const map = new mapboxgl.Map({
         container: 'map', // Container ID
@@ -18,20 +18,19 @@ function showMap() {
 
     //------------------------------------------------
     // Add listener for when the map finishes loading.
-    // After loading, we can add map features
+    // After loading, can add map features
     //------------------------------------------------
     map.on('load', () => {
-
-        //---------------------------------
-        // Add interactive pins for the hikes
-        //---------------------------------
+        // Call the addPostPins function to add interactive pins for the posts
         addPostPins(map);
-
     });
 }
-
 showMap();
 
+//-----------------------------------------------------------------------------------------------------------
+// Function that adds the post pins to the map. It does this by creating a new layer ontop of the MapBox map.
+// Input parameter is the MapBox map. 
+//-----------------------------------------------------------------------------------------------------------
 function addPostPins(map) {
 
     map.loadImage('./images/placeholder.png',
@@ -48,11 +47,12 @@ function addPostPins(map) {
                     // Extract coordinates of the place
                     coordinates = [doc.data().long, doc.data().lat];
                     console.log(coordinates);
+                    
                     // Extract other addition fields that you want etc.
-                    title = doc.data().title; // Event Name
+                    title = doc.data().title; // Post title
                     img = doc.data().image; // Image
-                    date = doc.data().date; // date
-                    viewcount = doc.data().viewcount;
+                    date = doc.data().date; // Date
+                    viewcount = doc.data().viewcount; // Post viewcount
 
                     // Push information (properties, geometry) into the features array
                     features.push({
@@ -72,7 +72,7 @@ function addPostPins(map) {
                     });
                 });
 
-                // Adds features (in our case, pins) to the map
+                // Adds pins to the map
                 // "places" is the name of this array of features
                 map.addSource('places', {
                     'type': 'geojson',
@@ -86,18 +86,18 @@ function addPostPins(map) {
                 // Add a layer showing the places.
                 map.addLayer({
                     'id': 'places',
-                    'type': 'symbol', // what the pins/markers/points look like
+                    'type': 'symbol', // what the pins look like
                     'source': 'places',
-                    'layout': {   // customize colour and size
+                    'layout': {   // The pin images
                         'icon-image': 'eventpin',
                         'icon-size': 0.05,
                         'icon-allow-overlap': true
                     }
                 });
 
-                // When one of the "places" markers are clicked,
+                // When one of the pins are clicked,
                 // create a popup that shows information 
-                // Everything related to a marker is save in features[] array
+                // Everything related to a pin is save in features[] array
                 map.on('click', 'places', (e) => {
                     // Copy coordinates array.
                     const coordinates = e.features[0].geometry.coordinates.slice();

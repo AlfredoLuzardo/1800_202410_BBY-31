@@ -1,3 +1,5 @@
+<!-- NAVBAR SHOWN AFTER USER IS LOGGED IN -->
+<!-- Template navbar loaded in by funtion in skeleton.js -->
 <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
     <img src="./images/logoInverse.png" alt="LinkSphere Logo Inverse" id="logo" style="height: 65px; width: 65px;">
@@ -25,7 +27,7 @@
           <a class="nav-link" href="aboutus.html">About Us</a>
         </li>
         <li class="nav-item" class="d-flex" id="logout-button">
-          <a class="btn btn-outline-light" href="../index.html">Logout</a>
+          <a class="btn btn-outline-light" onclick="logout()">Logout</a>
         </li>
       </ul>
       <!--NEED TO SAVE ALL FORM DATA IN THE EVENTLISTENER FUNCTION IN search_articles.js LATER-->
@@ -36,13 +38,14 @@
       </button>
       <input id="search-text" class="form-control" type="search" placeholder="Search for topics, events, & keywords"
         aria-label="Search">
+
       <!-- Filter button and dropdown menu -->
       <div class="dropdown d-flex justify-content-center">
         <button type="button" id="filter-button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
           aria-expanded="false" data-bs-auto-close="outside">
           <span class="material-symbols-outlined">filter_list</span>
         </button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-end">
           <li>
             <h6 class="dropdown-header">Filter by location</h6>
           </li>
@@ -50,6 +53,7 @@
             <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
               data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
                 id="continent-filter-option">Select Continent</span></button>
+
             <!--Continent sub-menu (after continent button is clicked)-->
             <ul id="continentListPlaceholder"></ul>
           </li>
@@ -60,6 +64,7 @@
             <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
               data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
                 id="country-filter-option">Select Country</span></button>
+
             <!--Country sub-menu (after continent button is clicked)-->
             <ul id="countryListPlaceholder"></ul>
           </li>
@@ -70,6 +75,7 @@
             <button type="button" class="location-button dropdown-item btn btn-light dropdown-toggle"
               data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"><span
                 id="city-filter-option">Select City</span></button>
+
             <!--City sub-menu (after continent button is clicked)-->
             <ul id="cityListPlaceholder"></ul>
           </li>
@@ -85,7 +91,9 @@
   </div>
 </nav>
 
-<!--JS file for filter menu functions, and loading in the options for the location menus-->
+<!-- JS file for filter menu functions, and loading in the options for the location menus -->
 <script src="../scripts/location_filter.js"></script>
-<!--JS file for search button and search bar functions-->
+<!-- JS file for search button and search bar functions -->
 <script src="../scripts/search_bar.js"></script>
+<!-- JS file for logout function -->
+<script src="../scripts/logout.js"></script>

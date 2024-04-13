@@ -1,3 +1,5 @@
+/* STYLING FOR EACH POST THATS NOT IN MAIN*/
+
 i {
     float: right;
 }
@@ -30,12 +32,6 @@ h2 {
     justify-content: center;
     align-items: center;
 }
-
-/*
-.post-container:hover {
-    cursor: pointer;
-}
-*/
 
 #image-container {
     border-style:solid;

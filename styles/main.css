@@ -1,3 +1,5 @@
+/* STYLING FOR MAIN HTML PAGE */
+
 @font-face {
     font-family: NavFont;
     src: url("../font/manrope.ttf");
@@ -76,14 +78,6 @@
     cursor: pointer;
 }
 
-/* .close-page-banner-button p:hover {
-    cursor: pointer;
-  }
-  
-  .close-page-banner-button #close-icon:hover {
-    cursor: pointer;
-  } */
-
 .page-banner-closed-property {
     display: none;
 }
@@ -107,8 +101,6 @@
 }
 
 .side-panel-toggle {
-    /* width: 2.5em;
-    height: 2.5em; */
     flex-shrink: 0;
 
     /* Center the news icon and text */
@@ -137,8 +129,6 @@
 
     color: white;
     background-color: rgb(65, 65, 65);
-    /*color: white;
-    background-color: rgb(241, 241, 241); */
 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }

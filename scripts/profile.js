@@ -1,11 +1,14 @@
-
-// Displays the info from the user document to the card form in the user profile page profile_page.html
+//-------------------------------------------------------------------------------------------------
+// Displays the info from the user document to the card form in the profile_page.html
+//-------------------------------------------------------------------------------------------------
 function displayProfileInfo() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
             db.collection("users").doc(user.uid)
             .onSnapshot(userDoc => {
+
+                // Get references to th elemen
                 const dateJoinedHTML = document.getElementById("dateJoined-goes-here");
                 const countryHTML = document.getElementById("country-goes-here");
                 const articlesSeenHTML = document.getElementById("articlesSeen-goes-here");
@@ -17,12 +20,16 @@ function displayProfileInfo() {
                 let ap = userDoc.data().totalposts;
                 let userName = user.displayName;
 
+                // Loads all the info into their dedicated locations if they are not null, 
+                // checks whether they are null first to avoid console errors.
                 if (nameHTML != null) {
                     nameHTML.innerHTML = userName;
                 }
+                
                 if (dateJoinedHTML != null){
                     dateJoinedHTML.innerHTML = dj;
                 }
+                
 
                 if (countryHTML != null){
                     countryHTML.innerHTML = c;
@@ -39,15 +46,16 @@ function displayProfileInfo() {
 
         } else {
             // No user is signed in.
-            console.log("No user is logged in");
+            alert("No user is logged in");
         }
     });
 }
 displayProfileInfo();
 
-
+//--------------------------------------------------------------------
 // Displays all of the posts in the myposts array in the user document 
 // in the user document to cards in the container in profile.html.
+//--------------------------------------------------------------------
 function displayMyPosts() {
     // Save the name of this function as a String to pass into 
     // displayPostDynamically (simple way to allow displayPostDynamically 
@@ -59,7 +67,7 @@ function displayMyPosts() {
             db.collection("users").doc(user.uid).get()
         .then(userDoc => {
             var myposts = userDoc.data().myposts;
-            console.log(myposts);
+            // console.log(myposts);
 
             myposts.forEach(thisPostID => {
                 // Get the id of the post document and pass it into the displayPostDynamically
@@ -72,10 +80,9 @@ function displayMyPosts() {
             })
         })
         } else { 
-            console.log("No user is signed in");
+            alert("No user is signed in");
             window.location.href = "login.html";
         }
     });
 }
-
 displayMyPosts();

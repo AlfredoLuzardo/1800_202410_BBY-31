@@ -5,13 +5,13 @@
 function loadSkeleton() {
 
     firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {                   //if the pointer to "user" object is not null, then someone is logged in
+        if (user) {         
             // User is signed in.
-            // Do something for the user here.
+            // Loads all of the logged in placeholders
             console.log($('#navbarPlaceholder').load('./text/nav_after_login.html'));
             console.log($('#stickyFooterPlaceholder').load('./text/sticky_footer.html'));
             console.log($('#footerPlaceholder').load('./text/footer.html'));
-
+            
             // Load the template post into post_history.html, profile_page,html, 
             // searched_articles.html, main.html
             console.log($('#top-post-template').load('./text/each_user_post.html'));
@@ -25,5 +25,4 @@ function loadSkeleton() {
         }
     });
 }
-
-loadSkeleton(); //invoke the function
+loadSkeleton();

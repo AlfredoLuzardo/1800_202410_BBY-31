@@ -1,7 +1,10 @@
+/*STYLING FOR ABOUT US HTML PAGE*/
+
 #title-div {
     padding: 20pt;
     text-align: center;
 }
+
 
 #aboutus-div {
     display:flex;
